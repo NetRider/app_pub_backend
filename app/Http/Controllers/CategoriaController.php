@@ -14,6 +14,12 @@ class CategoriaController extends Controller
 		return Categoria::all();
 	}
 
+	public function getForm()
+	{
+		return 'ciao';
+		//return view('insert_categoria');
+	}
+
 	public function insertCategoria(Request $request)
 	{
 		$path = Storage::putFile('', $request->file('immagine'));
