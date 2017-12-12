@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/insertCategoria', 'CategoriaController@insertCategoria');
-
 Route::get('/formCategoria', 'CategoriaController@getForm');
+
+Route::post('/insertCategoria', 'CategoriaController@insertCategoria');

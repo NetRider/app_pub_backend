@@ -16,8 +16,7 @@ class CategoriaController extends Controller
 
 	public function getForm()
 	{
-		return 'ciao';
-		//return view('insert_categoria');
+		return view('insert_categoria');
 	}
 
 	public function insertCategoria(Request $request)
@@ -25,11 +24,10 @@ class CategoriaController extends Controller
 		$path = Storage::putFile('', $request->file('immagine'));
 
 		$categoria = new Categoria;
-
 		$categoria->nome = $request->nome;
 		$categoria->immagine = $path;
 		$categoria->descrizione = $request->descrizione;
-		$categoria->menu_id = $reqeust->menu_id;
+		$categoria->menu_id = $request->menu_id;
 		$categoria->save();
 	}
 }
