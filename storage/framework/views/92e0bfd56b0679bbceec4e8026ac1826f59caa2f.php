@@ -8,7 +8,7 @@
 	<body>
 		<div class="container">
       		<h2>Crea una nuova categoria</h2><br/>
-      		<form method="post" action='/insertCategoria'>
+      		<form method="post" action='/insertCategoria' enctype="multipart/form-data">
 				 <?php echo e(csrf_field()); ?>
 
 		        <div class="row">

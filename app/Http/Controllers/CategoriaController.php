@@ -21,7 +21,12 @@ class CategoriaController extends Controller
 
 	public function insertCategoria(Request $request)
 	{
-		$path = Storage::putFile('', $request->file('immagine'));
+		$path = null;
+
+		if($request->hasFile('immagine'))
+		{
+			$path = Storage::putFile('/public', $request->file('immagine'));
+		}
 
 		$categoria = new Categoria;
 		$categoria->nome = $request->nome;

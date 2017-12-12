@@ -8,7 +8,7 @@
 	<body>
 		<div class="container">
       		<h2>Crea una nuova categoria</h2><br/>
-      		<form method="post" action='/insertCategoria'>
+      		<form method="post" action='/insertCategoria' enctype="multipart/form-data">
 				 {{ csrf_field() }}
 		        <div class="row">
 			        <div class="col-md-4"></div>
