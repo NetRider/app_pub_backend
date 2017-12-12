@@ -9,6 +9,7 @@ use App\Categoria;
 
 class CategoriaController extends Controller
 {
+	//Ritorna il JSON per le api;
     public function getCategorie()
 	{
 		return Categoria::all();
@@ -25,7 +26,7 @@ class CategoriaController extends Controller
 
 		if($request->hasFile('immagine'))
 		{
-			$path = Storage::putFile('/public', $request->file('immagine'));
+			$path = Storage::putFile('categorie', $request->file('immagine'));
 		}
 
 		$categoria = new Categoria;
@@ -34,5 +35,10 @@ class CategoriaController extends Controller
 		$categoria->descrizione = $request->descrizione;
 		$categoria->menu_id = $request->menu_id;
 		$categoria->save();
+	}
+
+	public function listCategorie()
+	{
+		return view('list_categorie', ['categorie' => Categoria::all()]);
 	}
 }
