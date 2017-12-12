@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class PiattoController extends Controller
 {
+
+    public function getForm()
+    {
+        return view('insert_piatto');
+    }
+
     public function getPiatti()
     {
         return Piatto::all();

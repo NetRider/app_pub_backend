@@ -27,8 +27,12 @@
 				<div class="row">
 		        	<div class="col-md-4"></div>
 		            <div class="form-group col-md-4">
-		            	<label for="menu_id">Menu_Id:</label>
-		            	<input type="text" class="form-control" name="menu_id">
+		            	<label for="menu_id">Menu:</label>
+						<select name="menu_id">
+							@foreach ($menus as $m)
+								<option value="{{$m->id}}">{{$m->nome}}</option>
+							@endforeach
+						</select>
 		            </div>
 		        </div>
 				<div class="row">
