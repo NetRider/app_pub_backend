@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/getCategorie', 'CategoriaController@getCategorie');
 
 Route::get('/getPiatti', 'PiattoController@getPiatti');
+
+Route::get('/getPiattiByCategoria/{cat_id}', 'PiattoController@getPiattiByCategoria');
+
+Route::get('/getPiattoById/{piatto_id}', 'PiattoController@getPiattoById');

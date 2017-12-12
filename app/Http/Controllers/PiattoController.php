@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Piatto;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class PiattoController extends Controller
@@ -14,7 +15,13 @@ class PiattoController extends Controller
 
     public function getPiattiByCategoria($cat_id)
     {
-        return Piatto::where('categoria_id', $cat_id);
+        $piatti = Piatto::where('categoria_id', $cat_id)->get();
+        return $piatti;
+    }
+
+    public function getPiattoById($piatto_id)
+    {
+        return Piatto::find($piatto_id);
     }
 
     public function insertPiatto(Request $request)

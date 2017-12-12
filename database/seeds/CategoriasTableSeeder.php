@@ -29,5 +29,14 @@ class CategoriasTableSeeder extends Seeder
 			'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
 			'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
 		]);
+
+        DB::table('categorias')->insert([
+            'nome' => 'Contorni',
+            'immagine' => '/storage/secondi_piatti.jpg',
+            'descrizione' => 'Insalatine buonine buonette',
+            'menu_id' => 1,
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
     }
 }
