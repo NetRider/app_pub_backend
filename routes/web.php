@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Route::get('/formCategoria', 'CategoriaController@getForm');
 
+Route::get('/formPiatto', 'PiattoController@getForm');
+
 Route::post('/insertCategoria', 'CategoriaController@insertCategoria');
