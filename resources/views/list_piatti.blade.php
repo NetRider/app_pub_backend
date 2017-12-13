@@ -10,9 +10,9 @@
     <h2>Lista dei piatti</h2><br/>
     @foreach ($piatti as $p)
         <div class="row">
-            {{$p->id}}
+
             <div class="col-md-4">
-						<span>{{$p->nome}}<span>
+						<span>{{$p->nome}}-{{$p->id}}<span>
             </div>
             <div class="col-md-4">
 						<span>{{$p->descrizione}}<span>

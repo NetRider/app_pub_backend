@@ -22,6 +22,26 @@ class CategoriaController extends Controller
         return view('edit_categoria', compact('categoria'));
     }
 
+    //aggiorna l'elemento
+    public function updateCategoria(Request $request)
+    {
+        $path = null;
+
+        if($request->hasFile('immagine'))
+        {
+            $path = Storage::putFile('categorie', $request->file('immagine'));
+        }
+
+        $categoria = Categoria::find($request->id);
+        $categoria->nome= $request->nome;
+        $categoria->descrizione= $request->descrizione;
+        $categoria->immagine= $path;
+        $categoria->menu_id= $request->menu_id;
+        $categoria->save();
+        return redirect('/listCategorie');
+
+    }
+
     //cancella l'elemento
     public function destroyCategoria($id)
     {

@@ -8,8 +8,9 @@
 <body>
 <div class="container">
     <h2>Modifica categoria</h2><br/>
-    <form method="post" action='/insertCategoria' enctype="multipart/form-data">
+    <form method="post" action='/updateCategoria' enctype="multipart/form-data">
         {{ csrf_field() }}
+        <input type="hidden" class="form-control" name="id" value="{{$categoria->id}}">
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
