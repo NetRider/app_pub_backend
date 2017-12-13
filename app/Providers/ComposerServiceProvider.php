@@ -27,6 +27,9 @@ class ComposerServiceProvider extends ServiceProvider
         View::composer(
             'insert_categoria', 'App\Http\ViewComposers\CategoriaComposer'
         );
+        View::composer(
+            'edit_menu', 'App\Http\ViewComposers\EditMenuComposer'
+        );
 
         // Using Closure based composers...
         View::composer('dashboard', function ($view) {

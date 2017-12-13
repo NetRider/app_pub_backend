@@ -15,10 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/formCategoria', 'CategoriaController@getForm');
+Route::post('/insertPiatto', 'PiattoController@insertPiatto');
 
 Route::get('/formPiatto', 'PiattoController@getForm');
 
 Route::post('/insertCategoria', 'CategoriaController@insertCategoria');
 
 Route::get('/listCategorie', 'CategoriaController@listCategorie');
+
+Route::get('/formCategoria', 'CategoriaController@getForm');
+
+Route::get('/editMenu', 'MenuController@editMenu');
+
+Route::post('/insertMenu', 'MenuController@insertMenu');
+
+Route::get('/formMenu', 'MenuController@getForm');
+
