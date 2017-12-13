@@ -15,17 +15,28 @@ class CategoriaController extends Controller
 		return Categoria::all();
 	}
 
+	//popola la view di edit
     public function editCategoria($id)
     {
         $categoria = Categoria::find($id);
         return view('edit_categoria', compact('categoria'));
     }
 
+    //cancella l'elemento
+    public function destroyCategoria($id)
+    {
+        $categoria = Categoria::find($id);
+        $categoria->delete();
+        return redirect('/listCategorie');
+    }
+
+    //mostra la form per la creazione
 	public function getForm()
 	{
 		return view('insert_categoria');
 	}
 
+	//inserisce un elemento nel DB
 	public function insertCategoria(Request $request)
 	{
 		$path = null;
@@ -41,8 +52,10 @@ class CategoriaController extends Controller
 		$categoria->descrizione = $request->descrizione;
 		$categoria->menu_id = $request->menu_id;
 		$categoria->save();
+        return redirect('/listCategorie');
 	}
 
+	//mostra tutti gli elementi
 	public function listCategorie()
 	{
 		return view('list_categorie', ['categorie' => Categoria::all()]);

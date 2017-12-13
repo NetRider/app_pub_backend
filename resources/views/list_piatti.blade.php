@@ -2,14 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Laravel 5.5 CRUD Tutorial With Example From Scratch </title>
+    <title>Lista dei piatti </title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
 <div class="container">
-    <h2>Lista delle categorie</h2><br/>
+    <h2>Lista dei piatti</h2><br/>
     @foreach ($piatti as $p)
         <div class="row">
+            {{$p->id}}
             <div class="col-md-4">
 						<span>{{$p->nome}}<span>
             </div>
@@ -22,6 +23,8 @@
             <div class="col-md-4">
                 <img src="{{Storage::url($p->immagine)}}" alt="Image not found">
             </div>
+            <button class="btn btn-default" onclick="location.href='/editPiatto/{{$p->id}}';">Modifica</button>
+            <button class="btn btn-danger" onclick="location.href='/destroyPiatto/{{$p->id}}';">Elimina</button>
         </div>
     @endforeach
 </div>

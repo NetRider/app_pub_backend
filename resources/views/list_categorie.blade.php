@@ -19,7 +19,8 @@
 					<div class="col-md-4">
 						<img src="{{Storage::url($categoria->immagine)}}" alt="Image not found">
 					</div>
-					<button onclick="location.href='/editCategoria/{{$categoria->id}}';"></button>
+					<button class="btn btn-default" onclick="location.href='/editCategoria/{{$categoria->id}}';"></button>
+					<button class="btn btn-danger" onclick="location.href='/destroyCategoria/{{$categoria->id}}';"></button>
 				</div>
 			@endforeach
 		</div>

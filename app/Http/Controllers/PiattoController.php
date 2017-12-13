@@ -14,12 +14,6 @@ class PiattoController extends Controller
         return view('insert_piatto');
     }
 
-    public function editPiatto($id)
-    {
-        $piatto = Piatto::find($id);
-        return view('edit_piatto', compact('piatto'));
-    }
-
     public function getPiatti()
     {
         return Piatto::all();
@@ -47,5 +41,46 @@ class PiattoController extends Controller
         $piatto->descrizione = $request->descrizione;
         $piatto->categoria_id = $request->categoria_id;
         $piatto->save();
+    }
+
+    //popola la view di edit
+    public function editPiatto($id)
+    {
+        $piatto = Piatto::find($id);
+        return view('edit_piatto', compact('piatto'));
+    }
+
+    //aggiorna l'elemento
+    public function updatePiatto(Request $request)
+    {
+        $path = null;
+
+        if($request->hasFile('immagine'))
+        {
+            $path = Storage::putFile('piatti', $request->file('immagine'));
+        }
+
+        $piatto = Piatto::find($request->id);
+        $piatto->nome= $request->nome;
+        $piatto->descrizione= $request->descrizione;
+        $piatto->immagine= $path;
+        $piatto->categoria_id= $request->categoria_id;
+        $piatto->save();
+        return redirect('/listPiatti');
+
+    }
+
+    //cancella l'elemento
+    public function destroyPiatto($id)
+    {
+        $piatto = Piatto::find($id);
+        $piatto->delete();
+        return redirect('/listPiatti');
+    }
+
+    //mostra tutti gli elementi
+    public function listPiatti()
+    {
+        return view('list_piatti', ['piatti' => Piatto::all()]);
     }
 }

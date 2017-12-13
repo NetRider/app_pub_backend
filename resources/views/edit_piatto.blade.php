@@ -8,8 +8,9 @@
 <body>
 <div class="container">
     <h2>Modifica piatto</h2><br/>
-    <form method="post" action='/insertPiatto'>
+    <form method="post" action='/updatePiatto' enctype="multipart/form-data">
         {{ csrf_field() }}
+        <input type="hidden" class="form-control" name="id" value="{{$piatto->id}}">
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">

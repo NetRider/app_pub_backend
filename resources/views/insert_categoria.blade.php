@@ -2,7 +2,7 @@
 <html>
 	<head>
     	<meta charset="utf-8">
-    	<title>Laravel 5.5 CRUD Tutorial With Example From Scratch </title>
+    	<title>Crea una nuova categoria </title>
     	<link rel="stylesheet" href="{{asset('css/app.css')}}">
 	</head>
 	<body>
@@ -50,6 +50,5 @@
 		        </div>
   			</form>
 		</div>
-    </div>
   </body>
 </html>

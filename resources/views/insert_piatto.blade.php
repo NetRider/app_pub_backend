@@ -8,7 +8,7 @@
 	<body>
 		<div class="container">
       		<h2>Inserisci un nuovo piatto</h2><br/>
-      		<form method="post" action='/insertPiatto'>
+      		<form method="post" action='/insertPiatto' enctype="multipart/form-data">
 {{ csrf_field() }}
 <div class="row">
     <div class="col-md-4"></div>
