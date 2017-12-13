@@ -15,6 +15,12 @@ class CategoriaController extends Controller
 		return Categoria::all();
 	}
 
+    public function editCategoria($id)
+    {
+        $categoria = Categoria::find($id);
+        return view('edit_categoria', compact('categoria'));
+    }
+
 	public function getForm()
 	{
 		return view('insert_categoria');

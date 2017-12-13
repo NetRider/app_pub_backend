@@ -1,22 +1,27 @@
 <?php
-
+/**
+ * Created by PhpStorm.
+ * User: mattia
+ * Date: 13/12/17
+ * Time: 11.16
+ */
 namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
 
-class EditMenuComposer
+class EditPiattoComposer
 {
-    private $menu;
+    private $categorie;
 
     /**
-     * Create a cat composer.
+     * Create a piatto composer.
      *
      * @return void
      */
     public function __construct()
     {
-        $m= \App\Menu::all();
-        $this->menu = $m;
+        $cat = \App\Categoria::all();
+        $this->categorie = $cat;
     }
 
     /**
@@ -27,6 +32,6 @@ class EditMenuComposer
      */
     public function compose(View $view)
     {
-        $view->with('menu', $this->menu);
+        $view->with('categorie', $this->categorie);
     }
 }

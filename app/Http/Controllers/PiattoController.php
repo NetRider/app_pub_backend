@@ -14,6 +14,12 @@ class PiattoController extends Controller
         return view('insert_piatto');
     }
 
+    public function editPiatto($id)
+    {
+        $piatto = Piatto::find($id);
+        return view('edit_piatto', compact('piatto'));
+    }
+
     public function getPiatti()
     {
         return Piatto::all();
