@@ -28,7 +28,7 @@ class MenuController extends Controller
 		$categorie = collect($menu->categorie);
 
 		$categorie->each(function ($categoria) {
-			$categoria->immagine = secure_asset($categoria->imamgine);
+			$categoria->immagine = secure_asset($categoria->immagine);
 			$piatti = collect($categoria->piatti);
 			$piatti->each(function ($piatto) {
 					$piatto->immagine = secure_asset($piatto->immagine);
