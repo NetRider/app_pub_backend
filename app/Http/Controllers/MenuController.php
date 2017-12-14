@@ -25,6 +25,7 @@ class MenuController extends Controller
 		$menuArray = [];
 		foreach ($menu->categorie as $categoria) {
 			foreach ($categoria->piatti as $piatto) {
+				$piatto->immagine = Storage::url($piatto->immagine);
 			}
 			array_push($menuArray, $categoria);
 		}
