@@ -32,7 +32,7 @@ class CategoriasTableSeeder extends Seeder
 
         DB::table('categorias')->insert([
             'nome' => 'Contorni',
-            'immagine' => 'categorie/secondi_piatti.jpg',
+            'immagine' => 'categorie/contorni.jpg',
             'descrizione' => 'Insalatine buonine buonette',
             'menu_id' => 1,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
