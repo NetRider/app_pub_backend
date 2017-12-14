@@ -21,7 +21,15 @@ class MenuController extends Controller
     //Ritorna il JSON per le api;
     public function getMenu()
     {
-        return Menu::all();
+		$menu = Menu::find(1);
+		$menuArray = [];
+		foreach ($menu->categorie as $categoria) {
+			foreach ($categoria->piatti as $piatto) {
+			}
+			array_push($menuArray, $categoria);
+		}
+
+		return response()->json($menuArray);
     }
 
     //aggiorna l'elemento
