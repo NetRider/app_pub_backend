@@ -69,4 +69,9 @@ class MenuController extends Controller
         return view('list_menu', ['menu' => Menu::all()]);
     }
 
+	public function getMenuVersion()
+	{
+		$menu = Menu::find(1);
+		return response()->json(["menu_version" => $menu->version]);
+	}
 }

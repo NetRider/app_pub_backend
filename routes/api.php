@@ -26,3 +26,5 @@ Route::get('/getPiattiByCategoria/{cat_id}', 'PiattoController@getPiattiByCatego
 Route::get('/getPiattoById/{piatto_id}', 'PiattoController@getPiattoById');
 
 Route::get('/getMenu', 'MenuController@getMenu');
+
+Route::get('getMenuVersion', 'MenuController@getMenuVersion');
