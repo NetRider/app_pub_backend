@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class MenuController extends Controller
 {
@@ -25,10 +27,10 @@ class MenuController extends Controller
 		$menuArray = [];
 		foreach ($menu->categorie as $categoria) {
 			foreach ($categoria->piatti as $piatto) {
-				$piatto->immagine = Storage::url($piatto->immagine);
 			}
 			array_push($menuArray, $categoria);
 		}
+		$menuArray = ["menu" => $menuArray];
 
 		return response()->json($menuArray);
     }
