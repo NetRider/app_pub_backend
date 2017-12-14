@@ -24,13 +24,18 @@ class MenuController extends Controller
     public function getMenu()
     {
 		$menu = Menu::find(1);
-		$menuArray = [];
-		foreach ($menu->categorie as $categoria) {
-			foreach ($categoria->piatti as $piatto) {
-			}
-			array_push($menuArray, $categoria);
-		}
-		$menuArray = ["menu" => $menuArray];
+
+		$categorie = collect($menu->categorie);
+
+		$categorie->each(function ($categoria) {
+			$categoria->immagine = secure_asset($categoria->imamgine);
+			$piatti = collect($categoria->piatti);
+			$piatti->each(function ($piatto) {
+					$piatto->immagine = secure_asset($piatto->immagine);
+			});
+		});
+
+		$menuArray = ["menu" => $categorie];
 
 		return response()->json($menuArray);
     }
