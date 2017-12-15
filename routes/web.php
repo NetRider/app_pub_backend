@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/editPiatto/{id}', 'PiattoController@editPiatto');
@@ -50,3 +50,15 @@ Route::get('/formMenu', 'MenuController@getForm');
 Route::post('/updateMenu', 'MenuController@updateMenu');
 
 Route::get('/destroyMenu/{id}', 'MenuController@destroyMenu');
+
+Route::get('/editEvento/{id}', 'EventoController@editEvento');
+
+Route::post('/insertEvento', 'EventoController@insertEvento');
+
+Route::get('/listEventi', 'EventoController@listEventi');
+
+Route::get('/formEvento', 'EventoController@getForm');
+
+Route::post('/updateEvento', 'EventoController@updateEvento');
+
+Route::get('/destroyEvento/{id}', 'EventoController@destroyEvento');

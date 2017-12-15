@@ -19,11 +19,11 @@
             <div class="col-md-4">
                 <img src="{{Storage::url($e->immagine)}}" alt="Image not found">
             </div>
-            <button class="btn btn-default" onclick="location.href='/editCategoria/{{$e->id}}';">Modifica</button>
-            <button class="btn btn-danger" onclick="location.href='/destroyCategoria/{{$e->id}}';">Elimina</button>
+            <button class="btn btn-default" onclick="location.href='/editEvento/{{$e->id}}';">Modifica</button>
+            <button class="btn btn-danger" onclick="location.href='/destroyEvento/{{$e->id}}';">Elimina</button>
         </div>
     @endforeach
-</div>
+    <button class="btn btn-succes" onclick="location.href='/formEvento';">Aggiungi Evento</button>
 </div>
 </body>
 </html>

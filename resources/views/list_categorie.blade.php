@@ -23,7 +23,7 @@
 					<button class="btn btn-danger" onclick="location.href='/destroyCategoria/{{$categoria->id}}';">Elimina</button>
 				</div>
 			@endforeach
+			<button class="btn btn-succes" onclick="location.href='/formCategoria';">Aggiungi Categoria</button>
 		</div>
-    </div>
   </body>
 </html>

@@ -20,6 +20,7 @@
             <button class="btn btn-danger" onclick="location.href='/destroyMenu/{{$m->id}}';">Elimina</button>
         </div>
     @endforeach
+    <button class="btn btn-succes" onclick="location.href='/formMenu';">Aggiungi Menù</button>
 </div>
 </body>
 </html>
