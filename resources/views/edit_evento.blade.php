@@ -7,33 +7,22 @@
 </head>
 <body>
 <div class="container">
-    <h2>Modifica categoria</h2><br/>
-    <form method="post" action='/updateCategoria' enctype="multipart/form-data">
+    <h2>Modifica evento</h2><br/>
+    <form method="post" action='/updateEvento' enctype="multipart/form-data">
         {{ csrf_field() }}
-        <input type="hidden" class="form-control" name="id" value="{{$categoria->id}}">
+        <input type="hidden" class="form-control" name="id" value="{{$evento->id}}">
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <label for="nome">Nome Categoria:</label>
-                <input type="text" class="form-control" name="nome" value="{{$categoria->nome}}">
+                <label for="titolo">Titolo evento:</label>
+                <input type="text" class="form-control" name="titolo" value="{{$evento->titolo}}">
             </div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
                 <label for="descrizione">Descrizione:</label>
-                <input type="text" class="form-control" name="descrizione" value="{{$categoria->descrizione}}">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
-                <label for="menu_id">Menu:</label>
-                <select name="menu_id">
-                    @foreach ($menus as $m)
-                        <option value="{{$m->id}}">{{$m->nome}}</option>
-                    @endforeach
-                </select>
+                <input type="text" class="form-control" name="descrizione" value="{{$evento->descrizione}}">
             </div>
         </div>
         <div class="row">
@@ -46,7 +35,7 @@
         <div class="row">
             <div class="col-md-5"></div>
             <div class="form-group col-md-4">
-                <button type="submit" class="btn btn-success" style="margin-left:38px">Modifica Categoria</button>
+                <button type="submit" class="btn btn-success" style="margin-left:38px">Modifica Evento</button>
             </div>
         </div>
     </form>

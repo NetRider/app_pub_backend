@@ -2,7 +2,7 @@
 <html>
 	<head>
     	<meta charset="utf-8">
-    	<title>Crea una nuova categoria </title>
+    	<title>Monthy's webservice  </title>
     	<link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
 	</head>
 	<body>

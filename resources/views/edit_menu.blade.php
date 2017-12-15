@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Modifica menù </title>
+    <title>Monthy's webservice </title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
