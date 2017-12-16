@@ -64,7 +64,7 @@ Route::post('/updateEvento', 'EventoController@updateEvento');
 Route::get('/destroyEvento/{id}', 'EventoController@destroyEvento');
 
 //Grazie Heroku per i link simbolici
-Route::get('storage/{filename}', function ($filename)
+Route::get('/storage/{filename}', function ($filename)
 {
     $path = storage_path('public/' . $filename);
 
