@@ -7,7 +7,7 @@
 
   		<title>@yield('title')</title>
 
-  		<link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
+  		<link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -23,7 +23,7 @@
                 </div>
             @endif
 
-            <div class='container fluid'>
+            <div class='container-fluid'>
 				@yield('content')
             </div>
         </div>

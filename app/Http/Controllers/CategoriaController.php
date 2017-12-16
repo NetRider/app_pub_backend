@@ -35,7 +35,13 @@ class CategoriaController extends Controller
         $categoria = Categoria::find($request->id);
         $categoria->nome= $request->nome;
         $categoria->descrizione= $request->descrizione;
-        $categoria->immagine= $path;
+
+		if($path != null)
+		{
+			Storage::delete($categoria->immagine);
+			$categoria->immagine = $path;
+		}
+
         $categoria->menu_id= $request->menu_id;
         $categoria->save();
         return redirect('/listCategorie');
@@ -46,6 +52,7 @@ class CategoriaController extends Controller
     public function destroyCategoria($id)
     {
         $categoria = Categoria::find($id);
+		Storage::delete($categoria->immagine);
         $categoria->delete();
         return redirect('/listCategorie');
     }
