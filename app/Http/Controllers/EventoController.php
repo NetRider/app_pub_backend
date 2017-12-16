@@ -39,11 +39,24 @@ class EventoController extends Controller
     public function updateEvento(Request $request)
     {
         $evento = Evento::find($request->id);
+
+        $path = null;
+
+        if($request->hasFile('immagine'))
+        {
+            $path = Storage::putFile('', $request->file('immagine'));
+        }
+
         $evento->titolo= $request->titolo;
         $evento->descrizione= $request->descrizione;
         $evento->data_inizio= $request->datainizio;
         $evento->data_fine= $request->datafine;
-        $evento->immagine= $request->immagine;
+
+        if($path != null)
+        {
+            Storage::delete($evento->immagine);
+            $evento->immagine = $path;
+        }
         $evento->save();
         return redirect('/listEventi');
 
@@ -66,7 +79,15 @@ class EventoController extends Controller
         $evento->descrizione= $request->descrizione;
         $evento->data_inizio= $request->datainizio;
         $evento->data_fine= $request->datafine;
-        $evento->immagine= $request->immagine;
+
+        $path = null;
+
+        if($request->hasFile('immagine'))
+        {
+            $path = Storage::putFile('', $request->file('immagine'));
+        }
+
+        $evento->immagine= $path;
         $evento->save();
         return redirect('/listEventi');
     }

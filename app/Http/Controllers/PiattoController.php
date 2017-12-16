@@ -32,11 +32,16 @@ class PiattoController extends Controller
 
     public function insertPiatto(Request $request)
     {
-        $path = Storage::putFile('', $request->file('immagine'));
-
         $piatto = new Piatto;
-
         $piatto->nome = $request->nome;
+
+        $path=null;
+
+        if($request->hasFile('immagine'))
+        {
+            $path = Storage::putFile('', $request->file('immagine'));
+        }
+
         $piatto->immagine = $path;
         $piatto->descrizione = $request->descrizione;
         $piatto->prezzo = $request->prezzo;
@@ -65,7 +70,11 @@ class PiattoController extends Controller
         $piatto = Piatto::find($request->id);
         $piatto->nome= $request->nome;
         $piatto->descrizione= $request->descrizione;
-        $piatto->immagine= $path;
+
+        if($path != null) {
+            Storage::delete($piatto->immagine);
+            $piatto->immagine = $path;
+        }
         $piatto->prezzo = $request->prezzo;
         $piatto->categoria_id= $request->categoria_id;
         $piatto->save();

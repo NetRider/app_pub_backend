@@ -11,6 +11,7 @@ class CreateEventosTable extends Migration
      *
      * @return void
      */
+    
     public function up()
     {
         Schema::create('eventos', function (Blueprint $table) {
