@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('title', 'Welcome to Monthy's webservice')
+@section('title', 'Welcome to Monthys webservice')
 
 @section('content')
 
