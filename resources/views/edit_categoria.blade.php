@@ -4,6 +4,12 @@
 
 @section('content')
     <h2>Modifica categoria</h2><br/>
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-danger" onclick="location.href='/listCategorie';"><span class="glyphicon glyphicon-remove"></span> Annulla</button>
+        </div>
+    </div>
+    <hr>
     <form method="post" action='/updateCategoria' enctype="multipart/form-data">
         {{ csrf_field() }}
         <input type="hidden" class="form-control" name="id" value="{{$categoria->id}}">

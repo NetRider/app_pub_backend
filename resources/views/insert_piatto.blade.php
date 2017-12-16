@@ -3,7 +3,13 @@
 @section('title', 'Inserisci Piatto')
 
 @section('content')
-      		<h2>Inserisci un nuovo piatto</h2><br/>
+	<h2>Inserisci un nuovo piatto</h2><br/>
+	<div class="row">
+		<div class="col-md-2">
+			<button class="btn btn-danger" onclick="location.href='/listPiatti';"><span class="glyphicon glyphicon-remove"></span> Annulla</button>
+		</div>
+	</div>
+	<hr>
       		<form method="post" action='/insertPiatto' enctype="multipart/form-data">
 				{{ csrf_field() }}
 				<div class="row">

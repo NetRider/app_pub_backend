@@ -4,6 +4,12 @@
 
 @section('content')
     <h2>Modifica piatto</h2><br/>
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-danger" onclick="location.href='/listPiatti';"><span class="glyphicon glyphicon-remove"></span> Annulla</button>
+        </div>
+    </div>
+    <hr>
     <form method="post" action='/updatePiatto' enctype="multipart/form-data">
         {{ csrf_field() }}
         <input type="hidden" class="form-control" name="id" value="{{$piatto->id}}">

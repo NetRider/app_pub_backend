@@ -14,7 +14,13 @@
 </head>
 <body>
 <div class="container">
-    <h2>Crea un nuovo evento</h2><br/>
+    <h2>Crea un nuovo evento</h2>
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-danger" onclick="location.href='/listEventi';"><span class="glyphicon glyphicon-remove"></span> Annulla</button>
+        </div>
+    </div>
+    <hr>
     <form method="post" action='/insertEvento' enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="row">

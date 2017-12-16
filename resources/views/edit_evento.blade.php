@@ -15,6 +15,12 @@
 <body>
 <div class="container">
     <h2>Modifica evento</h2><br/>
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-danger" onclick="location.href='/listEventi';"><span class="glyphicon glyphicon-remove"></span> Annulla</button>
+        </div>
+    </div>
+    <hr>
     <form method="post" action='/updateEvento' enctype="multipart/form-data">
         {{ csrf_field() }}
         <input type="hidden" class="form-control" name="id" value="{{$evento->id}}">
