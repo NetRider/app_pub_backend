@@ -64,12 +64,12 @@ Route::post('/updateEvento', 'EventoController@updateEvento');
 Route::get('/destroyEvento/{id}', 'EventoController@destroyEvento');
 
 //Grazie Heroku per i link simbolici
-Route::get('/storage/{filename}', function ($filename)
+Route::get('storage/{filename}', function ($filename)
 {
-    $path = storage_path('public/' . $filename);
+    $path = storage_path('app/public/' . $filename);
 
     if (!File::exists($path)) {
-        abort(404);
+		abort(404);
     }
 
     $file = File::get($path);

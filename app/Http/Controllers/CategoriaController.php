@@ -29,7 +29,7 @@ class CategoriaController extends Controller
 
         if($request->hasFile('immagine'))
         {
-            $path = Storage::putFile('categorie', $request->file('immagine'));
+            $path = Storage::putFile('', $request->file('immagine'));
         }
 
         $categoria = Categoria::find($request->id);
@@ -63,7 +63,7 @@ class CategoriaController extends Controller
 
 		if($request->hasFile('immagine'))
 		{
-			$path = Storage::putFile('categorie', $request->file('immagine'));
+			$path = Storage::putFile('', $request->file('immagine'));
 		}
 
 		$categoria = new Categoria;
