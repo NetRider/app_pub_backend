@@ -28,3 +28,7 @@ Route::get('/getPiattoById/{piatto_id}', 'PiattoController@getPiattoById');
 Route::get('/getMenu', 'MenuController@getMenu');
 
 Route::get('getMenuVersion', 'MenuController@getMenuVersion');
+
+Route::get('getEventoById/{id}', 'EventoController@getEventoById');
+
+Route::get('getEventi', 'EventoController@getEventi');

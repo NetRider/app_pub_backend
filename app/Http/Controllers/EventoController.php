@@ -22,11 +22,17 @@ class EventoController extends Controller
     }
 
     //Ritorna il JSON per le api;
-    public function getEvento($id)
+    public function getEventoById($id)
     {
         $evento = Evento::find($id);
 
         return response()->json($evento);
+    }
+
+    //Ritorna il JSON per le api;
+    public function getEventi()
+    {
+        return Evento::all();
     }
 
     //aggiorna l'elemento
