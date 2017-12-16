@@ -57,7 +57,7 @@ class PiattoController extends Controller
 
         if($request->hasFile('immagine'))
         {
-            $path = Storage::putFile('piatti', $request->file('immagine'));
+            $path = Storage::putFile('', $request->file('immagine'));
         }
 
         $piatto = Piatto::find($request->id);
