@@ -66,6 +66,7 @@ class EventoController extends Controller
     public function destroyEvento($id)
     {
         $evento = Evento::find($id);
+        Storage::delete($evento->immagine);
         $evento->delete();
         return redirect('/listEventi');
     }

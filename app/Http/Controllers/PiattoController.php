@@ -46,6 +46,7 @@ class PiattoController extends Controller
         $piatto->descrizione = $request->descrizione;
         $piatto->prezzo = $request->prezzo;
         $piatto->categoria_id = $request->categoria_id;
+        $this->updateMenuVersion();
         $piatto->save();
         return redirect('/listPiatti');
     }
@@ -77,6 +78,7 @@ class PiattoController extends Controller
         }
         $piatto->prezzo = $request->prezzo;
         $piatto->categoria_id= $request->categoria_id;
+        $this->updateMenuVersion();
         $piatto->save();
         return redirect('/listPiatti');
 
@@ -86,6 +88,8 @@ class PiattoController extends Controller
     public function destroyPiatto($id)
     {
         $piatto = Piatto::find($id);
+        Storage::delete($piatto->immagine);
+        $this->updateMenuVersion();
         $piatto->delete();
         return redirect('/listPiatti');
     }
@@ -94,5 +98,12 @@ class PiattoController extends Controller
     public function listPiatti()
     {
         return view('list_piatti', ['piatti' => Piatto::all()]);
+    }
+
+    private function updateMenuVersion()
+    {
+        $menu = Menu::find(1);
+        $menu->version = $menu->version + 1;
+        $menu->update();
     }
 }

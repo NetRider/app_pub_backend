@@ -35,8 +35,8 @@
             <div class='col-md-4'></div>
             <div class="form-group col-md-4">
                 <label for="datainizio">Data Inizio:</label>
-                <div class='input-group datetimepicker1'>
-                    <input type='text' class="form-control" name="datainizio"/>
+                <div class='input-group' id="datetimepicker1">
+                    <input type='text' class="form-control" name="datainizio" id="datetimepicker3"/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -47,7 +47,7 @@
             <div class='col-md-4'></div>
             <div class="form-group col-md-4">
                 <label for="datafine">Data Fine:</label>
-                <div class='input-group datetimepicker1'>
+                <div class='input-group' id="datetimepicker2">
                     <input type='text' class="form-control" name="datafine"/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
@@ -69,16 +69,21 @@
             </div>
         </div>
     </form>
+    <input type="hidden" id="q">
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.datetimepicker1').datetimepicker({
+        $('#datetimepicker1').datetimepicker({
+            format: 'ddd MMM DD HH:mm:ss YYYY',
+            locale: 'it'
+        });
+        $('#datetimepicker2').datetimepicker({
             format: 'ddd MMM DD HH:mm:ss YYYY',
             locale: 'it'
         });
     });
-    $( ".datetimepicker1" ).change(function() {
-        console.log(moment($('.datetimepicker1').data("DateTimePicker").date()).format('MM/DD/YYYY'));
+    $( "#datetimepicker3" ).change(function() {
+        $( "#q" ).val($('#datetimepicker1').data("DateTimePicker").date());
     });
 </script>
 </body>

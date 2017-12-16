@@ -7,7 +7,8 @@
 
   		<title>@yield('title')</title>
 
-  		<link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
+  		<link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
     <body>
