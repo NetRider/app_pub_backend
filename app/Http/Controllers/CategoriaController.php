@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 use App\Categoria;
+use App\Menu;
 
 class CategoriaController extends Controller
 {
@@ -19,6 +20,7 @@ class CategoriaController extends Controller
     public function editCategoria($id)
     {
         $categoria = Categoria::find($id);
+		
         return view('edit_categoria', compact('categoria'));
     }
 
@@ -42,6 +44,8 @@ class CategoriaController extends Controller
 			$categoria->immagine = $path;
 		}
 
+		$this->updateMenuVersion();
+
         $categoria->menu_id= $request->menu_id;
         $categoria->save();
         return redirect('/listCategorie');
@@ -54,6 +58,9 @@ class CategoriaController extends Controller
         $categoria = Categoria::find($id);
 		Storage::delete($categoria->immagine);
         $categoria->delete();
+
+		$this->updateMenuVersion();
+
         return redirect('/listCategorie');
     }
 
@@ -79,6 +86,9 @@ class CategoriaController extends Controller
 		$categoria->descrizione = $request->descrizione;
 		$categoria->menu_id = $request->menu_id;
 		$categoria->save();
+
+		$this->updateMenuVersion();
+
         return redirect('/listCategorie');
 	}
 
@@ -86,5 +96,12 @@ class CategoriaController extends Controller
 	public function listCategorie()
 	{
 		return view('list_categorie', ['categorie' => Categoria::all()]);
+	}
+
+	private function updateMenuVersion()
+	{
+		$menu = Menu::find(1);
+		$menu->version = $menu->version + 1;
+		$menu->update();
 	}
 }
