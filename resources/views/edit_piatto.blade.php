@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Monthy's webservice  </title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-</head>
-<body>
-<div class="container">
+@extends('welcome')
+
+@section('title', 'Modifica piatto')
+
+@section('content')
     <h2>Modifica piatto</h2><br/>
     <form method="post" action='/updatePiatto' enctype="multipart/form-data">
         {{ csrf_field() }}
@@ -50,7 +46,4 @@
             </div>
         </div>
     </form>
-</div>
-</div>
-</body>
-</html>
+@endsection

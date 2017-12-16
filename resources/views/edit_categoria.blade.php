@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Monthy's webservice </title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-</head>
-<body>
-<div class="container">
+@extends('welcome')
+
+@section('title', 'Modifica Categoria')
+
+@section('content')
     <h2>Modifica categoria</h2><br/>
     <form method="post" action='/updateCategoria' enctype="multipart/form-data">
         {{ csrf_field() }}
@@ -50,6 +46,4 @@
             </div>
         </div>
     </form>
-</div>
-</body>
-</html>
+@endsection
