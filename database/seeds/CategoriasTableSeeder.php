@@ -14,7 +14,7 @@ class CategoriasTableSeeder extends Seeder
     {
 		DB::table('categorias')->insert([
 			'nome' => 'Primi Piatti',
-			'immagine' => 'categorie/primi_piatti.jpg',
+			'immagine' => 'primi_piatti.jpg',
 			'descrizione' => 'I primi piatti sono importanti per iniziare la serata',
 			'menu_id' => 1,
 			'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
@@ -23,7 +23,7 @@ class CategoriasTableSeeder extends Seeder
 
 		DB::table('categorias')->insert([
 			'nome' => 'Secondi Piatti',
-			'immagine' => 'categorie/secondi_piatti.jpg',
+			'immagine' => 'secondi_piatti.jpg',
 			'descrizione' => 'I secondi piatti sono i più buoni',
 			'menu_id' => 1,
 			'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
@@ -32,7 +32,7 @@ class CategoriasTableSeeder extends Seeder
 
         DB::table('categorias')->insert([
             'nome' => 'Contorni',
-            'immagine' => 'categorie/contorni.jpg',
+            'immagine' => 'contorni.jpg',
             'descrizione' => 'Insalatine buonine buonette',
             'menu_id' => 1,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
