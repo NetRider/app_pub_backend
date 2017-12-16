@@ -24,6 +24,18 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
+                <label for="descrizione">Prezzo:</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" name="prezzo" value="{{$piatto->prezzo}}">
+                    <div class="input-group-addon">
+                        €
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
                 <label for="menu_id">Categoria:</label>
                 <select name="categoria_id">
                     @foreach ($categorie as $c)

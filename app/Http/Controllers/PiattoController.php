@@ -39,8 +39,10 @@ class PiattoController extends Controller
         $piatto->nome = $request->nome;
         $piatto->immagine = $path;
         $piatto->descrizione = $request->descrizione;
+        $piatto->prezzo = $request->prezzo;
         $piatto->categoria_id = $request->categoria_id;
         $piatto->save();
+        return redirect('/listPiatti');
     }
 
     //popola la view di edit
@@ -64,6 +66,7 @@ class PiattoController extends Controller
         $piatto->nome= $request->nome;
         $piatto->descrizione= $request->descrizione;
         $piatto->immagine= $path;
+        $piatto->prezzo = $request->prezzo;
         $piatto->categoria_id= $request->categoria_id;
         $piatto->save();
         return redirect('/listPiatti');

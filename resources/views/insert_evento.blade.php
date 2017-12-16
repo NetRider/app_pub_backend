@@ -39,16 +39,15 @@
         </div>
 
         <div class="row">
-            <div class='col-sm-4'>
-                <div class="form-group">
-                    <div class='input-group date' id='datetimepicker1'>
+            <div class='col-md-4'></div>
+                <div class="form-group col-md-4">
+                    <div class='input-group' id='datetimepicker1'>
                         <input type='text' class="form-control" />
                         <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                     </div>
                 </div>
-            </div>
         </div>
 
 

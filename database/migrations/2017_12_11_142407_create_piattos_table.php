@@ -18,6 +18,7 @@ class CreatePiattosTable extends Migration
 			$table->string('nome');
 			$table->string('immagine');
 			$table->text('descrizione');
+            $table->float('prezzo');
 			$table->integer('categoria_id')->unsigned();
             $table->timestamps();
 
