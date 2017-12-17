@@ -13,9 +13,9 @@ class CategoriasTableSeeder extends Seeder
     public function run()
     {
 		DB::table('categorias')->insert([
-			'nome' => 'Primi Piatti',
+			'nome' => 'Panini-Hamburger',
 			'immagine' => 'primi_piatti.jpg',
-			'descrizione' => 'I primi piatti sono importanti per iniziare la serata',
+			'descrizione' => 'I primi piatti sono importanti per iniziare la serata.',
 			'menu_id' => 1,
 			'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
 			'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
@@ -24,7 +24,7 @@ class CategoriasTableSeeder extends Seeder
 		DB::table('categorias')->insert([
 			'nome' => 'Secondi Piatti',
 			'immagine' => 'secondi_piatti.jpg',
-			'descrizione' => 'I secondi piatti sono i più buoni',
+			'descrizione' => 'I secondi piatti sono i più buoni.',
 			'menu_id' => 1,
 			'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
 			'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
@@ -33,10 +33,19 @@ class CategoriasTableSeeder extends Seeder
         DB::table('categorias')->insert([
             'nome' => 'Contorni',
             'immagine' => 'contorni.jpg',
-            'descrizione' => 'Insalatine buonine buonette',
+            'descrizione' => 'Insalatine per tutti i gusti.',
             'menu_id' => 1,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
+
+		DB::table('categorias')->insert([
+			'nome' => 'Aggiunte',
+			'immagine' => 'Lardo-di-colonnata.jpg',
+			'descrizione' => 'Dai un tocco in più ai nostri piatti.',
+			'menu_id' => 1,
+			'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+			'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+		]);
     }
 }
