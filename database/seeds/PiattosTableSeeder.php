@@ -86,7 +86,7 @@ class PiattosTableSeeder extends Seeder
             'immagine' => "BurgerPollo.jpg",
             'descrizione' => "Descrizione",
             'prezzo' => "6.00",
-            'categoria_id' => 0,
+            'categoria_id' => 1,
             'created_at' => \Carbon\Carbon::Now(),
             'updated_at' => \Carbon\Carbon::Now(),
         ]);
@@ -96,7 +96,7 @@ class PiattosTableSeeder extends Seeder
 			'immagine' => "hamburgercinghiale.jpg",
 			'descrizione' => "Descrizione",
 			'prezzo' => "8.00",
-			'categoria_id' => 0,
+			'categoria_id' => 1,
 			'created_at' => \Carbon\Carbon::Now(),
 			'updated_at' => \Carbon\Carbon::Now(),
 		]);
