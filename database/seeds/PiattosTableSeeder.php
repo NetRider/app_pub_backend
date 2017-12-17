@@ -90,16 +90,5 @@ class PiattosTableSeeder extends Seeder
             'created_at' => \Carbon\Carbon::Now(),
             'updated_at' => \Carbon\Carbon::Now(),
         ]);
-
-		DB::table('piattos')->insert([
-			'nome' => "Hamburger Cinghiale",
-			'immagine' => "hamburgercinghiale.jpg",
-			'descrizione' => "Descrizione",
-			'prezzo' => "8.00",
-			'categoria_id' => 1,
-			'created_at' => \Carbon\Carbon::Now(),
-			'updated_at' => \Carbon\Carbon::Now(),
-		]);
-
     }
 }
