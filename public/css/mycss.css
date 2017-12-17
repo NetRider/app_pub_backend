@@ -1,0 +1,122 @@
+.jumbotron {
+
+    background-image: url("../img/jumbo.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.text-center {
+    text-align:center
+}
+
+#c {
+
+    background: linear-gradient(
+            rgba(20,20,20, .5),
+            rgba(20,20,20, .5)),
+    url("../img/categ.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#c:hover {
+    background: linear-gradient(
+            rgba(20,20,20, .8),
+            rgba(20,20,20, .8)),
+    url("../img/categ.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#p {
+
+    background: linear-gradient(
+            rgba(20,20,20, .5),
+            rgba(20,20,20, .5)),
+    url("../img/dish.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#p:hover {
+    background: linear-gradient(
+            rgba(20,20,20, .8),
+            rgba(20,20,20, .8)),
+    url("../img/dish.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#e {
+
+    background: linear-gradient(
+rgba(20,20,20, .5),
+rgba(20,20,20, .5)),
+url("../img/event.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#e:hover {
+    background: linear-gradient(
+            rgba(20,20,20, .8),
+            rgba(20,20,20, .8)),
+    url("../img/event.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.white{
+    color:white!important;
+}
+
+.blackback{
+    background-color:RGBa(0,0,0,0.2);!important;
+}
+
+.h{
+    height: 350px;
+}
+
+.mycol{
+    height: 350px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    color:white!important;
+}
+
+.vcenter {
+    margin-top: 130px;
+}
+
+.main{
+    background-color:black;!important;
+}
+
+.col-lg-3 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+h2{
+    font-size: 50px;
+}
+
+p{
+    font-size: 23px;
+}
