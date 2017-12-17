@@ -13,7 +13,7 @@ class CategoriasTableSeeder extends Seeder
     public function run()
     {
 		DB::table('categorias')->insert([
-			'nome' => 'Panini-Hamburger',
+			'nome' => 'Panini',
 			'immagine' => 'primi_piatti.jpg',
 			'descrizione' => 'I primi piatti sono importanti per iniziare la serata.',
 			'menu_id' => 1,

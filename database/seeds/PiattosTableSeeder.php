@@ -12,7 +12,7 @@ class PiattosTableSeeder extends Seeder
     public function run()
     {
         DB::table('piattos')->insert([
-            'nome' => "Zucchine Grigliate",
+            'nome' => "Zucchine",
             'immagine' => "zucchineGrigliate.jpg",
             'descrizione' => "Descrizione",
             'prezzo' => "1",
