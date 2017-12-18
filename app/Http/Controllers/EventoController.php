@@ -109,11 +109,24 @@ class EventoController extends Controller
         $evento->save();
         $this->updateSchedarioVersion();
 
-		$notificationBuilder = new PayloadNotificationBuilder();
-		$notificationBuilder->setTitle('Nuovo evento creato')
-		            		->setBody('Questo evento è bello ed è inviato con Laravel')
-		            		->setSound('sound')
-		            		->setBadge('badge');
+		$optionBuilder = new OptionsBuilder();
+		$optionBuilder->setTimeToLive(60*20);
+
+		$notificationBuilder = new PayloadNotificationBuilder('my title');
+		$notificationBuilder->setBody('Hello world')
+						    ->setSound('default');
+
+		$dataBuilder = new PayloadDataBuilder();
+		$dataBuilder->addData(['a_data' => 'my_data']);
+
+		$option = $optionBuilder->build();
+		$notification = $notificationBuilder->build();
+		$data = $dataBuilder->build();
+
+		// You must change it to get your tokens
+		$tokens = '1:635282798234:android:82dd412cce27bf64';
+
+		$downstreamResponse = FCM::sendTo($tokens, $option, $notification, $data);
 
 		$notification = $notificationBuilder->build();
 
