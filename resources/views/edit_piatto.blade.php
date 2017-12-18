@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('title', 'Modifica piatto')
+@section('title', 'Modifica Piatto')
 
 @section('content')
     <h2>Modifica piatto</h2><br/>
@@ -24,7 +24,7 @@
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
                 <label for="descrizione">Descrizione:</label>
-                <textarea class="form-control" rows="5" name="descrizione" value="{{$piatto->descrizione}}"></textarea>
+                <textarea class="form-control" rows="5" name="descrizione">{{$piatto->descrizione}}</textarea>
             </div>
         </div>
         <div class="row">
@@ -43,7 +43,7 @@
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
                 <label for="menu_id">Categoria:</label>
-                <select name="categoria_id">
+                <select name="categoria_id" style="color: black">
                     @foreach ($categorie as $c)
                         <option value="{{$c->id}}">{{$c->nome}}</option>
                     @endforeach

@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('title', 'Lista menu')
+@section('title', 'Lista Menu')
 
 @section('content')
 	<h2>Lista degli Menù</h2><br/>

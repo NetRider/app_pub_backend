@@ -30,7 +30,7 @@
 		<div class="col-md-4"></div>
 		<div class="form-group col-md-4">
 			<label for="menu_id">Menu:</label>
-			<select name="menu_id">
+			<select name="menu_id" style="color: black">
 				@foreach ($menus as $m)
 					<option value="{{$m->id}}">{{$m->nome}}</option>
 				@endforeach

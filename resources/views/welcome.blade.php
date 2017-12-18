@@ -6,18 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
   		<title>@yield('title')</title>
-
-  		<link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
-        <link rel="stylesheet" href="{{secure_asset('bootstrap/css/bootstrap.css')}}">
-        <link rel="stylesheet" href="{{secure_asset('bootstrap/css/bootstrap-theme.css')}}">
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
+        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap-theme.css')}}">
+        <link rel="stylesheet" href="{{asset('css/mycss.css')}}">
+        <link rel="stylesheet" href="{{asset('datetimepicker/css/bootstrap-datetimepicker.min.css')}}"/>
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
-        <script type="text/javascript" src="{{ URL::asset('js/jquery/jquery-1.8.3.min.js')}}" charset="UTF-8"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery/jquery-1.8.3.min.js')}}" charset="UTF-8"></script>
+        <script type="text/javascript" src="{{ asset('moment/moment.min.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('moment/locales/it.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script>
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="{{ URL::asset('validator/dist/jquery.validate.js')}}"
-                charset="UTF-8"></script>
-        <link rel="stylesheet" href="{{secure_asset('css/mycss.css')}}">
+        <script type="text/javascript" src="{{ asset('datetimepicker/js/bootstrap-datetimepicker.min.js')}}" charset="UTF-8"></script>
+        <script type="text/javascript" src="{{ asset('validator/dist/jquery.validate.js')}}" charset="UTF-8"></script>
+        <script type="text/javascript" src="{{ asset('js/eventoValidator.js')}}" charset="UTF-8"></script>
     </head>
-    <body>
+    <body class="main white">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">

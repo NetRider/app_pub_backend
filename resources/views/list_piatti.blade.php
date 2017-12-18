@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('title', 'Lista dei piatti')
+@section('title', 'Lista Piatti')
 
 @section('content')
 	<h2>Lista dei piatti</h2><br/>
@@ -13,28 +13,28 @@
 		</div>
 	</div>
 	<hr>
+	<table  class="table table-hover">
+		<thead>
+		<tr>
+			<th scope="col">Nome</th>
+			<th scope="col">Descrizione</th>
+			<th scope="col">Prezzo</th>
+			<th scope="col">Categoria</th>
+			<th scope="col">Immagine</th>
+			<th scope="col"></th>
+		</tr>
+		</thead>
+		<tbody>
 	@foreach ($piatti as $p)
-		<div class="row">
-
-			<div class="col-md-2">
-						<span>{{$p->nome}}</span>
-			</div>
-			<div class="col-md-3">
-						<span>{{$p->descrizione}}</span>
-			</div>
-			<div class="col-md-1">
-						<span>{{$p->prezzo}}€</span>
-			</div>
-			<div class="col-md-1">
-				<span>{{$p->categoria_id}}</span>
-			</div>
-			<div class="col-md-3">
-				<img src="{{Storage::url($p->immagine)}}" alt="Image not found" height="150" width="300">
-			</div>
-			<div class="col-md-2">
-			<button class="btn btn-default" onclick="location.href='/editPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
-			<button class="btn btn-danger" onclick="location.href='/destroyPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-trash"></span> Elimina</button>
-			</div>
-		</div>
+		<tr>
+			<td>{{$p->nome}}</td>
+			<td>{{$p->descrizione}}</td>
+			<td>{{$p->prezzo}}€</td>
+			<td>{{$p->categoria_id}}</td>
+			<td><img src="{{Storage::url($p->immagine)}}" alt="Image not found" height="50" width="auto"></td>
+			<td><button class="btn btn-default" onclick="location.href='/editPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
+				<button class="btn btn-danger" onclick="location.href='/destroyPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-trash"></span> Elimina</button>
+			</td>
+		</tr>
 	@endforeach
 @endsection

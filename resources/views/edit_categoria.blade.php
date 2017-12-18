@@ -24,14 +24,14 @@
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
                 <label for="descrizione">Descrizione:</label>
-                <textarea class="form-control" rows="5" name="descrizione" value="{{$categoria->descrizione}}"></textarea>
+                <textarea class="form-control" rows="5" name="descrizione">{{$categoria->descrizione}}</textarea>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
                 <label for="menu_id">Menu:</label>
-                <select name="menu_id">
+                <select name="menu_id" style="color: black">
                     @foreach ($menus as $m)
                         <option value="{{$m->id}}">{{$m->nome}}</option>
                     @endforeach

@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('title', 'Lista categorie')
+@section('title', 'Lista Categorie')
 
 @section('content')
 	<h2>Lista delle categorie</h2><br/>
@@ -13,24 +13,24 @@
 		</div>
 	</div>
 	<hr>
+	<table  class="table table-hover">
+		<thead>
+		<tr>
+			<th scope="col">Nome</th>
+			<th scope="col">Descrizione</th>
+			<th scope="col">Immagine</th>
+			<th scope="col"></th>
+		</tr>
+		</thead>
+		<tbody>
 	@foreach ($categorie as $categoria)
-		<div class="row">
-			<div class="col-md-2">
-				<span>{{$categoria->nome}}</span>
-			</div>
-			<div class="col-md-2">
-				<span>{{$categoria->descrizione}}</span>
-			</div>
-			<div class="col-md-4">
-				<img src="{{Storage::url($categoria->immagine)}}" alt="Image not found" height="150" width="300">
-			</div>
-			<div class="col-md-2">
-				<button class="btn btn-default" onclick="location.href='/editCategoria/{{$categoria->id}}';"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
-			</div>
-			<div class="col-md-2">
+		<tr>
+			<td>{{$categoria->nome}}</td>
+			<td>{{$categoria->descrizione}}</td>
+			<td><img src="{{Storage::url($categoria->immagine)}}" alt="Image not found" height="50" width="auto"></td>
+			<td><button class="btn btn-default" onclick="location.href='/editCategoria/{{$categoria->id}}';"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
 				<button class="btn btn-danger" onclick="location.href='/destroyCategoria/{{$categoria->id}}';"><span class="glyphicon glyphicon-trash"></span> Elimina</button>
-			</div>
-		</div>
-		<hr>
+			</td>
+		</tr>
 	@endforeach
 @endsection

@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('title', 'Welcome to Monthys webservice')
+@section('title', 'Monthy\'s webservice')
 
 @section('content')
 <body class="main">
@@ -21,18 +21,21 @@
 				<div class="col-md-12 text-center">
 				<h2 class="vcenter">Categorie</h2>
 				<p>Crea, modifica ed elimina le categorie</p>
+					<button class="btn btn-success">Gestisci <span class="glyphicon glyphicon-chevron-right"></span></button>
 			</div>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-md-6 mycol" id="p" onclick="location.href='/listPiatti';">
 				<div class="col-md-12 text-center">
 				<h2 class="vcenter">Piatti</h2>
 				<p>Crea, modifica ed elimina i piatti</p>
+					<button class="btn btn-success">Gestisci <span class="glyphicon glyphicon-chevron-right"></span></button>
 			</div>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-md-12 mycol" id="e" onclick="location.href='/listEventi';">
 				<div class="col-md-12 text-center">
 				<h2 class="vcenter">Eventi</h2>
 				<p>Crea, modifica ed elimina un evento</p>
+					<button class="btn btn-success">Gestisci <span class="glyphicon glyphicon-chevron-right"></span></button>
 			</div>
 			</div><!-- /.col-lg-4 -->
 		</div>
