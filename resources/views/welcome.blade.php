@@ -11,7 +11,10 @@
         <link rel="stylesheet" href="{{secure_asset('bootstrap/css/bootstrap.css')}}">
         <link rel="stylesheet" href="{{secure_asset('bootstrap/css/bootstrap-theme.css')}}">
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+        <script type="text/javascript" src="{{ URL::asset('js/jquery/jquery-1.8.3.min.js')}}" charset="UTF-8"></script>
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="{{ URL::asset('validator/dist/jquery.validate.js')}}"
+                charset="UTF-8"></script>
         <link rel="stylesheet" href="{{secure_asset('css/mycss.css')}}">
     </head>
     <body>

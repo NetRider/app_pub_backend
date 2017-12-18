@@ -32,7 +32,15 @@ class EventoController extends Controller
     //Ritorna il JSON per le api;
     public function getEventi()
     {
-        return Evento::all();
+        $evArray = Evento::all();
+
+        $evArray->each(function ($ev) {
+            $ev->immagine = secure_asset(Storage::url($ev->immagine));
+        });
+
+        $returnArray = ["evento" => $evArray];
+
+        return response()->json($returnArray);
     }
 
     //aggiorna l'elemento
@@ -49,8 +57,9 @@ class EventoController extends Controller
 
         $evento->titolo= $request->titolo;
         $evento->descrizione= $request->descrizione;
-        $evento->data_inizio= $request->datainizio;
-        $evento->data_fine= $request->datafine;
+        $evento->data= $request->data;
+        $evento->ora_inizio= $request->orainizio;
+        $evento->ora_fine= $request->orafine;
 
         if($path != null)
         {
@@ -58,6 +67,7 @@ class EventoController extends Controller
             $evento->immagine = $path;
         }
         $evento->save();
+        $this->updateSchedarioVersion();
         return redirect('/listEventi');
 
     }
@@ -68,6 +78,7 @@ class EventoController extends Controller
         $evento = Evento::find($id);
         Storage::delete($evento->immagine);
         $evento->delete();
+        $this->updateSchedarioVersion();
         return redirect('/listEventi');
     }
 
@@ -78,8 +89,9 @@ class EventoController extends Controller
         $evento = new Evento;
         $evento->titolo= $request->titolo;
         $evento->descrizione= $request->descrizione;
-        $evento->data_inizio= $request->datainizio;
-        $evento->data_fine= $request->datafine;
+        $evento->data= $request->data;
+        $evento->ora_inizio= $request->orainizio;
+        $evento->ora_fine= $request->orafine;
 
         $path = null;
 
@@ -90,6 +102,7 @@ class EventoController extends Controller
 
         $evento->immagine= $path;
         $evento->save();
+        $this->updateSchedarioVersion();
         return redirect('/listEventi');
     }
 
@@ -97,6 +110,13 @@ class EventoController extends Controller
     public function listEventi()
     {
         return view('list_eventi', ['eventi' => Evento::all()]);
+    }
+
+    private function updateSchedarioVersion()
+    {
+        $sched = \App\Schedario::find(1);
+        $sched->schedario_version = $sched->schedario_version + 1;
+        $sched->update();
     }
 
 }

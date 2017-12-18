@@ -11,7 +11,7 @@ class CreateEventosTable extends Migration
      *
      * @return void
      */
-    
+
     public function up()
     {
         Schema::create('eventos', function (Blueprint $table) {
@@ -19,8 +19,9 @@ class CreateEventosTable extends Migration
             $table->string('titolo');
             $table->string('immagine');
             $table->text('descrizione');
-            $table->string('data_inizio');
-            $table->string('data_fine');
+            $table->string('data');
+            $table->string('ora_inizio');
+            $table->string('ora_fine');
             $table->timestamps();
         });
     }

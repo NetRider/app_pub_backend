@@ -102,7 +102,7 @@ class PiattoController extends Controller
 
     private function updateMenuVersion()
     {
-        $menu = Menu::find(1);
+        $menu = \App\Menu::find(1);
         $menu->version = $menu->version + 1;
         $menu->update();
     }

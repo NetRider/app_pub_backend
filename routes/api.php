@@ -32,3 +32,5 @@ Route::get('getMenuVersion', 'MenuController@getMenuVersion');
 Route::get('getEventoById/{id}', 'EventoController@getEventoById');
 
 Route::get('getEventi', 'EventoController@getEventi');
+
+Route::get('getSchedarioVersion', 'SchedarioController@getSchedarioVersion');
