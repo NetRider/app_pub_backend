@@ -30,6 +30,7 @@
     26 => 'App\\Providers\\EventServiceProvider',
     27 => 'App\\Providers\\RouteServiceProvider',
     28 => 'App\\Providers\\ComposerServiceProvider',
+    29 => 'LaravelFCM\\FCMServiceProvider',
   ),
   'eager' => 
   array (
@@ -149,6 +150,9 @@
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
+    'fcm.client' => 'LaravelFCM\\FCMServiceProvider',
+    'fcm.group' => 'LaravelFCM\\FCMServiceProvider',
+    'fcm.sender' => 'LaravelFCM\\FCMServiceProvider',
   ),
   'when' => 
   array (
@@ -189,6 +193,9 @@
     array (
     ),
     'Laravel\\Tinker\\TinkerServiceProvider' => 
+    array (
+    ),
+    'LaravelFCM\\FCMServiceProvider' => 
     array (
     ),
   ),

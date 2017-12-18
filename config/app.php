@@ -178,6 +178,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
 
+		LaravelFCM\FCMServiceProvider::class,
+
+
     ],
 
     /*
@@ -227,6 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+		'FCM'      => LaravelFCM\Facades\FCM::class,
     ],
 
 ];

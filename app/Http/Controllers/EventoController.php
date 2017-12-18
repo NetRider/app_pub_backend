@@ -7,6 +7,11 @@ use App\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+use LaravelFCM\Message\OptionsBuilder;
+use LaravelFCM\Message\PayloadDataBuilder;
+use LaravelFCM\Message\PayloadNotificationBuilder;
+use FCM;
+
 
 class EventoController extends Controller
 {
@@ -103,7 +108,16 @@ class EventoController extends Controller
         $evento->immagine= $path;
         $evento->save();
         $this->updateSchedarioVersion();
-        return redirect('/listEventi');
+
+		$notificationBuilder = new PayloadNotificationBuilder();
+		$notificationBuilder->setTitle('Nuovo evento creato')
+		            		->setBody('Questo evento è bello ed è inviato con Laravel')
+		            		->setSound('sound')
+		            		->setBadge('badge');
+
+		$notification = $notificationBuilder->build();
+
+		return redirect('/listEventi');
     }
 
     //mostra tutti gli elementi
