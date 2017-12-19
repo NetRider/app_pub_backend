@@ -36,7 +36,7 @@ class MenuController extends Controller
 		});
 
 		$menuArray = ["menu" => $categorie];
-		
+
 		return response()->json($menuArray);
     }
 

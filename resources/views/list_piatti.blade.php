@@ -30,7 +30,7 @@
 			<td>{{$p->nome}}</td>
 			<td>{{$p->descrizione}}</td>
 			<td>{{$p->prezzo}}€</td>
-			<td>{{$p->categoria_id}}</td>
+			<td>{{$p->categoria->nome}}</td>
 			<td><img class="clip" src="{{Storage::url($p->immagine)}}" alt="Image not found" height="50px" width="auto"></td>
 			<td><button class="btn btn-default" onclick="location.href='/editPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
 				<button class="btn btn-danger" onclick="location.href='/destroyPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-trash"></span> Elimina</button>

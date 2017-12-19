@@ -9,4 +9,9 @@ class Piatto extends Model
     protected $table = 'piattos';
     protected $primaryKey = 'id';
     protected $fillable = ['nome', 'descrizione', 'categoria_id', "immagine"];
+
+	public function categoria()
+   	{
+	   return $this->belongsTo('App\Categoria');
+   	}
 }
