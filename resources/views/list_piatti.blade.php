@@ -3,7 +3,7 @@
 @section('title', 'Lista Piatti')
 
 @section('content')
-	<h2>Lista dei piatti</h2><br/>
+	<h2 style="color: white;">Lista dei piatti</h2><br/>
 	<div class="row">
 		<div class="col-md-2">
 			<button class="btn btn-primary" onclick="location.href='/';"><span class="glyphicon glyphicon-home"></span> Torna alla home</button>
@@ -13,7 +13,7 @@
 		</div>
 	</div>
 	<hr>
-	<table  class="table table-hover">
+	<table  class="table table-striped">
 		<thead>
 		<tr>
 			<th scope="col">Nome</th>
@@ -31,7 +31,7 @@
 			<td>{{$p->descrizione}}</td>
 			<td>{{$p->prezzo}}€</td>
 			<td>{{$p->categoria_id}}</td>
-			<td><img src="{{Storage::url($p->immagine)}}" alt="Image not found" height="50" width="auto"></td>
+			<td><img class="clip" src="{{Storage::url($p->immagine)}}" alt="Image not found" height="50px" width="auto"></td>
 			<td><button class="btn btn-default" onclick="location.href='/editPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
 				<button class="btn btn-danger" onclick="location.href='/destroyPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-trash"></span> Elimina</button>
 			</td>

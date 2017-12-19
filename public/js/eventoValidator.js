@@ -13,6 +13,8 @@ $(document).ready(function () {
     });
     $("#eventoform").validate({
 
+        errorClass: "my-error-class",
+        
         rules: {
             // simple rule, converted to {required:true}
             titolo: "required",

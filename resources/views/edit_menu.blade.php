@@ -3,7 +3,7 @@
 @section('title', 'Modifica Menù')
 
 @section('content')
-	<h2>Modifica menù</h2><br/>
+	<h2 style="color: white;">Modifica menù</h2><br/>
 	<div class="row">
 		<div class="col-md-2">
 			<button class="btn btn-danger" onclick="location.href='/listMenu';"><span class="glyphicon glyphicon-remove"></span> Annulla</button>
