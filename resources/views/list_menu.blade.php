@@ -3,7 +3,7 @@
 @section('title', 'Lista Menu')
 
 @section('content')
-	<h2>Lista degli Menù</h2><br/>
+	<h2 style="color: white;">Lista degli Menù</h2><br/>
 	<div class="row">
 		<div class="col-md-2">
 			<button class="btn btn-primary" onclick="location.href='/';"> <span class="glyphicon glyphicon-home"></span> Torna alla home</button>
