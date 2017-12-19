@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Storage;
 use LaravelFCM\Message\OptionsBuilder;
 use LaravelFCM\Message\PayloadDataBuilder;
 use LaravelFCM\Message\PayloadNotificationBuilder;
+use LaravelFCM\Message\Topics;
+
 use FCM;
 
 
@@ -109,28 +111,18 @@ class EventoController extends Controller
         $evento->save();
         $this->updateSchedarioVersion();
 
-		$optionBuilder = new OptionsBuilder();
-		$optionBuilder->setTimeToLive(60*20);
-
 		$notificationBuilder = new PayloadNotificationBuilder('my title');
 		$notificationBuilder->setBody('Hello world')
-						    ->setSound('default');
-
-		$dataBuilder = new PayloadDataBuilder();
-		$dataBuilder->addData(['a_data' => 'my_data']);
-
-		$option = $optionBuilder->build();
-		$notification = $notificationBuilder->build();
-		$data = $dataBuilder->build();
-
-		// You must change it to get your tokens
-		$tokens = '1:635282798234:android:82dd412cce27bf64';
-
-		$downstreamResponse = FCM::sendTo($tokens, $option, $notification, $data);
+				    ->setSound('default');
 
 		$notification = $notificationBuilder->build();
 
-		return redirect('/listEventi');
+		$topic = new Topics();
+		$topic->topic('PubNotification');
+
+		$topicResponse = FCM::sendToTopic($topic, null, $notification, null);
+
+		return response()->json($downstreamResponse->numberSuccess());
     }
 
     //mostra tutti gli elementi
