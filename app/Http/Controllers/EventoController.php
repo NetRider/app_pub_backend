@@ -11,7 +11,6 @@ use LaravelFCM\Message\OptionsBuilder;
 use LaravelFCM\Message\PayloadDataBuilder;
 use LaravelFCM\Message\PayloadNotificationBuilder;
 use LaravelFCM\Message\Topics;
-
 use FCM;
 
 
@@ -111,8 +110,8 @@ class EventoController extends Controller
         $evento->save();
         $this->updateSchedarioVersion();
 
-		$notificationBuilder = new PayloadNotificationBuilder('my title');
-		$notificationBuilder->setBody('Hello world')
+		$notificationBuilder = new PayloadNotificationBuilder($evento->titolo);
+		$notificationBuilder->setBody($evento->descrizione)
 				    ->setSound('default');
 
 		$notification = $notificationBuilder->build();
@@ -120,9 +119,15 @@ class EventoController extends Controller
 		$topic = new Topics();
 		$topic->topic('PubNotification');
 
-		$topicResponse = FCM::sendToTopic($topic, null, $notification, null);
+		$dataBuilder = new PayloadDataBuilder();
+			$dataBuilder->addData([
+				'id_evento' => $evento->id,
+			]);
+		$data = $dataBuilder->build();
 
-		return response()->json($downstreamResponse->numberSuccess());
+		$topicResponse = FCM::sendToTopic($topic, null, $notification, $data);
+
+		return redirect('/listEventi');
     }
 
     //mostra tutti gli elementi
