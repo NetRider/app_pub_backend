@@ -127,7 +127,7 @@ class EventoController extends Controller
 
 		$topicResponse = FCM::sendToTopic($topic, null, $notification, $data);
 
-		return redirect('/listEventi');
+		return response()->json($topicResponse->isSuccess());
     }
 
     //mostra tutti gli elementi
