@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PiattosTableSeeder::class);
         $this->call(EventosTableSeeder::class);
         $this->call(SchedariosTableSeeder::class);
+        $this->call(UserTableSeeder::class);
     }
 }

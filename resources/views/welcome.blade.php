@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!--
   		<title>@yield('title')</title>
         <link rel="stylesheet" href="{{secure_asset('css/app.css')}}">
         <link rel="stylesheet" href="{{secure_asset('bootstrap/css/bootstrap.css')}}">
@@ -20,9 +20,11 @@
         <script type="text/javascript" src="{{ secure_asset('datetimepicker/js/bootstrap-datetimepicker.min.js')}}" charset="UTF-8"></script>
         <script type="text/javascript" src="{{ secure_asset('validator/dist/jquery.validate.js')}}" charset="UTF-8"></script>
         <script type="text/javascript" src="{{ secure_asset('js/eventoValidator.js')}}" charset="UTF-8"></script>
+        <script type="text/javascript" src="{{ secure_asset('js/categoriaValidator.js')}}" charset="UTF-8"></script>
+        <script type="text/javascript" src="{{ secure_asset('js/piattoValidator.js')}}" charset="UTF-8"></script>
+-->
 
 
-		    <!--
   		<title>@yield('title')</title>
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
@@ -40,7 +42,7 @@
         <script type="text/javascript" src="{{ asset('js/eventoValidator.js')}}" charset="UTF-8"></script>
         <script type="text/javascript" src="{{ asset('js/categoriaValidator.js')}}" charset="UTF-8"></script>
         <script type="text/javascript" src="{{ asset('js/piattoValidator.js')}}" charset="UTF-8"></script>
-    -->
+
     </head>
     <body class="main">
         <div class="flex-center position-ref full-height">

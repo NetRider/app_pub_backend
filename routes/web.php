@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('/editPiatto/{id}', 'PiattoController@editPiatto');
 
@@ -80,3 +78,7 @@ Route::get('storage/{filename}', function ($filename)
 
     return $response;
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
