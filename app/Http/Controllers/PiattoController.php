@@ -6,6 +6,12 @@ use App\Piatto;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
+use LaravelFCM\Message\OptionsBuilder;
+use LaravelFCM\Message\PayloadDataBuilder;
+use LaravelFCM\Message\PayloadNotificationBuilder;
+use LaravelFCM\Message\Topics;
+use FCM;
+
 class PiattoController extends Controller
 {
 
@@ -46,8 +52,38 @@ class PiattoController extends Controller
         $piatto->descrizione = $request->descrizione;
         $piatto->prezzo = $request->prezzo;
         $piatto->categoria_id = $request->categoria_id;
+		if($request->aggiunte == null)
+		{
+			$piatto->aggiunte = false;
+		}else {
+			$piatto->aggiunte = $request->aggiunte;
+		}
         $this->updateMenuVersion();
         $piatto->save();
+
+		$titolo_notifica = $request->titolo_notifica;
+		$descrizione_notifica = $request->descrizione_notifica;
+
+		if($titolo_notifica != null && $descrizione_notifica != null)
+		{
+			$notificationBuilder = new PayloadNotificationBuilder($titolo_notifica);
+			$notificationBuilder->setBody($descrizione_notifica)
+					    ->setSound('default');
+
+			$notification = $notificationBuilder->build();
+
+			$topic = new Topics();
+			$topic->topic('PubNotification');
+
+			$dataBuilder = new PayloadDataBuilder();
+				$dataBuilder->addData([
+					'id_piatto' => $piatto->id,
+				]);
+			$data = $dataBuilder->build();
+
+			$topicResponse = FCM::sendToTopic($topic, null, $notification, $data);
+		}
+
         return redirect('/listPiatti');
     }
 

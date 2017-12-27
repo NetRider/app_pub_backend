@@ -17,6 +17,7 @@ class PiattosTableSeeder extends Seeder
             'descrizione' => "Descrizione",
             'prezzo' => "1",
             'categoria_id' => 4,
+			'aggiunte' => 0,
             'created_at' => \Carbon\Carbon::Now(),
             'updated_at' => \Carbon\Carbon::Now(),
         ]);
@@ -27,6 +28,7 @@ class PiattosTableSeeder extends Seeder
             'descrizione' => "Descrizione",
             'prezzo' => "0.50",
             'categoria_id' => 4,
+			'aggiunte' => 0,
             'created_at' => \Carbon\Carbon::Now(),
             'updated_at' => \Carbon\Carbon::Now(),
         ]);
@@ -37,6 +39,7 @@ class PiattosTableSeeder extends Seeder
             'descrizione' => "Descrizione",
             'prezzo' => "0.50",
             'categoria_id' => 4,
+			'aggiunte' => 0,
             'created_at' => \Carbon\Carbon::Now(),
             'updated_at' => \Carbon\Carbon::Now(),
         ]);
@@ -47,6 +50,7 @@ class PiattosTableSeeder extends Seeder
             'descrizione' => "Descrizione",
             'prezzo' => "1.00",
             'categoria_id' => 4,
+			'aggiunte' => 0,
             'created_at' => \Carbon\Carbon::Now(),
             'updated_at' => \Carbon\Carbon::Now(),
         ]);
@@ -57,6 +61,7 @@ class PiattosTableSeeder extends Seeder
             'descrizione' => "Descrizione",
             'prezzo' => "1.00",
             'categoria_id' => 4,
+			'aggiunte' => 0,
             'created_at' => \Carbon\Carbon::Now(),
             'updated_at' => \Carbon\Carbon::Now(),
         ]);
@@ -67,6 +72,7 @@ class PiattosTableSeeder extends Seeder
             'descrizione' => "Descrizione",
             'prezzo' => "1.50",
             'categoria_id' => 4,
+			'aggiunte' => 0,
             'created_at' => \Carbon\Carbon::Now(),
             'updated_at' => \Carbon\Carbon::Now(),
         ]);
@@ -77,6 +83,7 @@ class PiattosTableSeeder extends Seeder
             'descrizione' => "Descrizione",
             'prezzo' => "0.50",
             'categoria_id' => 4,
+			'aggiunte' => 0,
             'created_at' => \Carbon\Carbon::Now(),
             'updated_at' => \Carbon\Carbon::Now(),
         ]);
@@ -87,6 +94,7 @@ class PiattosTableSeeder extends Seeder
             'descrizione' => "Descrizione",
             'prezzo' => "6.00",
             'categoria_id' => 1,
+			'aggiunte' => 1,
             'created_at' => \Carbon\Carbon::Now(),
             'updated_at' => \Carbon\Carbon::Now(),
         ]);
