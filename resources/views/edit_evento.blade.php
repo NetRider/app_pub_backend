@@ -39,7 +39,7 @@
         </div>
         <div class="row">
             <div class="form-group col-md-4 col-md-offset-3">
-                <label for="datafine">Ora Inizio:</label>
+                <label for="orainizio">Ora Inizio:</label>
                 <div class='input-group' id="datetimepicker2">
                     <input type='text' class="form-control" id="inizioev" name="inizio1" value="{{$evento->ora_inizio}}"/>
                     <span class="input-group-addon">
@@ -50,7 +50,7 @@
         </div>
         <div class="row">
             <div class="form-group col-md-4 col-md-offset-3">
-                <label for="datafine">Ora Fine:</label>
+                <label for="orafine">Ora Fine:</label>
                 <div class='input-group' id="datetimepicker3">
                     <input type='text' class="form-control" id="fineev" name="fine1" value="{{$evento->ora_fine}}"/>
                     <span class="input-group-addon">
