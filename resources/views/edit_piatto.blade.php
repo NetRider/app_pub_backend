@@ -42,15 +42,24 @@
                 <label for="menu_id">Categoria:</label><br>
                 <select name="categoria_id" style="color: black">
                     @foreach ($categorie as $c)
-                        <option value="{{$c->id}}">{{$c->nome}}</option>
+                        @if($piatto->categoria_id == $c->id)
+                            <option value="{{$c->id}}" selected>{{$c->nome}}</option>
+                        @else
+                            <option value="{{$c->id}}">{{$c->nome}}</option>
+                        @endif
                     @endforeach
                 </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="aggiunte">Aggiunte:</label> <br>
+                <input type="checkbox" name="aggiunte" value="{{$piatto->aggiunte}}"> Disponibili
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-4 col-md-offset-3">
-                <label for="immagine">Immagine:</label>
-                <input type="file" name="immagine">
+                <label for="immagineEdit">Immagine:</label><br>
+                <img class="clip" src="{{Storage::url($piatto->immagine)}}" alt="Image not found" height="50px" width="auto">
+                <input type="file" name="immagineEdit">
             </div>
         </div>
         <div class="row">

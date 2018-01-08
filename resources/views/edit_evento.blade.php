@@ -61,8 +61,9 @@
         </div>
         <div class="row">
             <div class="form-group col-md-4 col-md-offset-3">
-                <label for="immagine">Immagine:</label>
-                <input type="file" name="immagine" class="white">
+                <label for="immagineEdit">Immagine:</label><br>
+                <img class="clip" src="{{Storage::url($evento->immagine)}}" alt="Image not found" height="50px" width="auto">
+                <input type="file" name="immagineEdit">
             </div>
         </div>
         <div class="row">

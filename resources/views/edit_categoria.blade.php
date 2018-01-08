@@ -31,15 +31,20 @@
                 <label for="menu_id">Menu:</label><br>
                 <select name="menu_id" style="color: black">
                     @foreach ($menus as $m)
-                        <option value="{{$m->id}}">{{$m->nome}}</option>
+                        @if($categoria->menu_id == $m->id)
+                            <option value="{{$m->id}}" selected>{{$m->nome}}</option>
+                        @else
+                            <option value="{{$m->id}}">{{$m->nome}}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-4 col-md-offset-3">
-                <label for="immagine">Immagine:</label>
-                <input type="file" name="immagine">
+                <label for="immagineEdit">Immagine:</label><br>
+                <img class="clip" src="{{Storage::url($categoria->immagine)}}" alt="Image not found" height="50px" width="auto">
+                <input type="file" name="immagineEdit">
             </div>
         </div>
         <div class="row">

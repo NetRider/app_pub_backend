@@ -29,9 +29,9 @@ class CategoriaController extends Controller
     {
         $path = null;
 
-        if($request->hasFile('immagine'))
+        if($request->hasFile('immagineEdit'))
         {
-            $path = Storage::putFile('', $request->file('immagine'));
+            $path = Storage::putFile('', $request->file('immagineEdit'));
         }
 
         $categoria = Categoria::find($request->id);
