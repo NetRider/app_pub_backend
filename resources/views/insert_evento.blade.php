@@ -61,7 +61,7 @@
         <div class="row">
             <div class="form-group col-md-4 col-md-offset-3">
                 <label for="immagine">Immagine:</label>
-                <input type="file" name="immagine" class="white">
+                <input type="file" name="immagine">
             </div>
         </div>
         <div class="row">
