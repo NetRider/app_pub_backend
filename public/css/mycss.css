@@ -7,6 +7,25 @@
     background-size: cover;
 }
 
+body.dragging, body.dragging * {
+    cursor: move !important;
+}
+
+.dragged {
+    position: absolute;
+    opacity: 0.5;
+    z-index: 2000;
+}
+
+ol.example li.placeholder {
+    position: relative;
+    /** More li styles **/
+}
+ol.example li.placeholder:before {
+    position: absolute;
+    /** Define arrowhead **/
+}
+
 .picker-switch, .dow, .next, .prev {
     background-color: #F0F0F0!important;
     color: black ;
