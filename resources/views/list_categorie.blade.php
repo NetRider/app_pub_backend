@@ -15,7 +15,7 @@
         </div>
     </div>
     <hr>
-    <table class="table table-striped sortable">
+    <table class="table table-striped sortableC">
         <thead>
         <tr>
             <th scope="col">Nome</th>
@@ -26,7 +26,7 @@
         </thead>
         <tbody>
         @foreach ($categorie as $categoria)
-            <tr>
+            <tr id="{{$categoria->id}}">
                 <td>{{$categoria->nome}}</td>
             @php
               $desc=null;

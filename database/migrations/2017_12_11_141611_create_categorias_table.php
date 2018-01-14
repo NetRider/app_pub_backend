@@ -19,6 +19,7 @@ class CreateCategoriasTable extends Migration
 			$table->string('immagine');
 			$table->text('descrizione');
 			$table->integer('menu_id')->unsigned();
+            $table->integer('order')->unsigned()->nullable();
             $table->timestamps();
 
 			$table->foreign('menu_id')->references('id')->on('menus');

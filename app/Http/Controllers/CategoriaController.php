@@ -13,7 +13,7 @@ class CategoriaController extends Controller
 	//Ritorna il JSON per le api;
     public function getCategorie()
 	{
-		return Categoria::all();
+		return Categoria::orderBy('order', 'asc')->get();
 	}
 
 	//popola la view di edit
@@ -95,7 +95,7 @@ class CategoriaController extends Controller
 	//mostra tutti gli elementi
 	public function listCategorie()
 	{
-		return view('list_categorie', ['categorie' => Categoria::all()]);
+		return view('list_categorie', ['categorie' => Categoria::orderBy('order', 'asc')->get()]);
 	}
 
 	private function updateMenuVersion()
@@ -104,4 +104,16 @@ class CategoriaController extends Controller
 		$menu->version = $menu->version + 1;
 		$menu->update();
 	}
+
+    //aggiorna l'ordine
+    public function sortCategorie(Request $items)
+    {
+        $arr=json_decode($items['data']);
+        foreach ($arr as $it) {
+            $piatto = Categoria::find($it->id);
+            $piatto->order = $it->order;
+            $this->updateMenuVersion();
+            $piatto->save();
+        }
+    }
 }

@@ -42,6 +42,8 @@
         <script type="text/javascript" src="{{ asset('js/eventoValidator.js')}}" charset="UTF-8"></script>
         <script type="text/javascript" src="{{ asset('js/categoriaValidator.js')}}" charset="UTF-8"></script>
         <script type="text/javascript" src="{{ asset('js/piattoValidator.js')}}" charset="UTF-8"></script>
+        <script type="text/javascript" src="{{ asset('js/sortPiatti.js')}}" charset="UTF-8"></script>
+        <script type="text/javascript" src="{{ asset('js/sortCategorie.js')}}" charset="UTF-8"></script>
 
     </head>
     <body class="main">
