@@ -152,8 +152,9 @@ class PiattoController extends Controller
         foreach ($arr as $it) {
             $piatto = Piatto::find($it->id);
             $piatto->order = $it->order;
-            $this->updateMenuVersion();
             $piatto->save();
         }
+
+        $this->updateMenuVersion();
     }
 }

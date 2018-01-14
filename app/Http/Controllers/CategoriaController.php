@@ -112,8 +112,9 @@ class CategoriaController extends Controller
         foreach ($arr as $it) {
             $piatto = Categoria::find($it->id);
             $piatto->order = $it->order;
-            $this->updateMenuVersion();
             $piatto->save();
         }
+
+        $this->updateMenuVersion();
     }
 }

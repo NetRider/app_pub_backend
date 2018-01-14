@@ -23,7 +23,6 @@
         <script type="text/javascript" src="{{ secure_asset('js/eventoValidator.js')}}" charset="UTF-8"></script>
 -->
 
-
   		<title>@yield('title')</title>
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
