@@ -11,7 +11,7 @@
 		</div>
 	</div>
 	<hr>
-	<table  class="table table-striped">
+	<table  class="table table-striped sortableP">
 		<thead>
 		<tr>
 			<th scope="col" >Nome</th>
@@ -24,7 +24,7 @@
 		</thead>
 		<tbody>
 	@foreach ($piatti as $p)
-		<tr>
+		<tr id="{{$p->id}}">
 			<td>{{$p->nome}}</td>
 			@php
 				$desc=null;
@@ -48,4 +48,5 @@
 			</td>
 		</tr>
 	@endforeach
+
 @endsection

@@ -14,7 +14,7 @@
 	</div>
 	<hr>
 	@foreach ($menu as $m)
-		<div class="row">
+		<div class="row sortable">
 			<div class="col-md-4">
 				<span>{{$m->nome}}<span>
 			</div>
@@ -26,4 +26,9 @@
 		</div>
 	@endforeach
 	<button class="btn btn-succes" onclick="location.href='/formMenu';">Aggiungi Menù</button>
+	<script>
+		$(function  () {
+            $(".sortable").sortable();
+        });
+	</script>
 @endsection

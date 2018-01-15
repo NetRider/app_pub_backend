@@ -12,6 +12,8 @@ use LaravelFCM\Message\PayloadNotificationBuilder;
 use LaravelFCM\Message\Topics;
 use FCM;
 
+use Illuminate\Support\Facades\Log;
+
 class PiattoController extends Controller
 {
 
@@ -22,7 +24,7 @@ class PiattoController extends Controller
 
     public function getPiatti()
     {
-        return Piatto::all();
+        return Piatto::orderBy('order', 'asc')->get();
     }
 
     public function getPiattiByCategoria($cat_id)
@@ -99,9 +101,9 @@ class PiattoController extends Controller
     {
         $path = null;
 
-        if($request->hasFile('immagine'))
+        if($request->hasFile('immagineEdit'))
         {
-            $path = Storage::putFile('', $request->file('immagine'));
+            $path = Storage::putFile('', $request->file('immagineEdit'));
         }
 
         $piatto = Piatto::find($request->id);
@@ -133,7 +135,7 @@ class PiattoController extends Controller
     //mostra tutti gli elementi
     public function listPiatti()
     {
-        return view('list_piatti', ['piatti' => Piatto::all()]);
+        return view('list_piatti', ['piatti' => Piatto::orderBy('order', 'asc')->get()]);
     }
 
     private function updateMenuVersion()
@@ -141,5 +143,18 @@ class PiattoController extends Controller
         $menu = \App\Menu::find(1);
         $menu->version = $menu->version + 1;
         $menu->update();
+    }
+
+    //aggiorna l'ordine
+    public function sortPiatti(Request $items)
+    {
+        $arr=json_decode($items['data']);
+        foreach ($arr as $it) {
+            $piatto = Piatto::find($it->id);
+            $piatto->order = $it->order;
+            $piatto->save();
+        }
+
+        $this->updateMenuVersion();
     }
 }

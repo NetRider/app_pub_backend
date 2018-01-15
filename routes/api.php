@@ -34,3 +34,7 @@ Route::get('getEventoById/{id}', 'EventoController@getEventoById');
 Route::get('getEventi', 'EventoController@getEventi');
 
 Route::get('getSchedarioVersion', 'SchedarioController@getSchedarioVersion');
+
+Route::post('sortPiatti', 'PiattoController@sortPiatti');
+
+Route::post('sortCategorie', 'CategoriaController@sortCategorie');

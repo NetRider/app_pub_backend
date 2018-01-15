@@ -15,7 +15,7 @@
         </div>
     </div>
     <hr>
-    <table class="table table-striped">
+    <table class="table table-striped sortableC">
         <thead>
         <tr>
             <th scope="col">Nome</th>
@@ -26,7 +26,7 @@
         </thead>
         <tbody>
         @foreach ($categorie as $categoria)
-            <tr>
+            <tr id="{{$categoria->id}}">
                 <td>{{$categoria->nome}}</td>
             @php
               $desc=null;
@@ -54,4 +54,13 @@
                 </td>
             </tr>
     @endforeach
+        <script>
+            // Sortable rows
+            $('.sortable').sortable({
+                containerSelector: 'table',
+                itemPath: '> tbody',
+                itemSelector: 'tr',
+                placeholder: '<tr class="placeholder"/>'
+            });
+        </script>
 @endsection
