@@ -20,7 +20,6 @@ class CreatePiattosTable extends Migration
 			$table->text('descrizione');
             $table->float('prezzo');
 			$table->integer('categoria_id')->unsigned();
-            $table->integer('order')->unsigned()->nullable();
             $table->timestamps();
 
 			$table->foreign('categoria_id')->references('id')->on('categorias');
