@@ -37,7 +37,7 @@ $(document).ready(function () {
 //sends the new order to the server
     function updateOrder(value) {
         $.ajax({
-            url: "http://localhost:8000/api/sortPiatti",
+            url: "http://104.131.188.84/api/sortPiatti",
             headers: {
                 "_token": "{{ csrf_token() }}"
             },
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
             success: function (jsonData) {
                 //alert("ok");
-                window.location.href = "http://localhost:8000/listPiatti";
+                window.location.href = "http://104.131.188.84/listPiatti";
             },
 
             error: function (request, status, error) {
