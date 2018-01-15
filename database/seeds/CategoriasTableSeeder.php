@@ -12,14 +12,6 @@ class CategoriasTableSeeder extends Seeder
      */
     public function run()
     {
-		DB::table('categorias')->insert([
-			'nome' => 'Panini',
-			'immagine' => 'primi_piatti.jpg',
-			'descrizione' => 'I primi piatti sono importanti per iniziare la serata.',
-			'menu_id' => 1,
-			'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-			'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
-		]);
 
 		DB::table('categorias')->insert([
 			'nome' => 'Secondi Piatti',

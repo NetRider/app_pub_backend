@@ -1,7 +1,5 @@
 <?php
 
-$url = parse_url(getenv("DATABASE_URL"));
-
 return [
 
     /*
@@ -15,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------

@@ -28,10 +28,14 @@ class MenuController extends Controller
 		$categorie = collect($menu->categorie);
 
 		$categorie->each(function ($categoria) {
-			$categoria->immagine = secure_asset(Storage::url($categoria->immagine));
+			$categoria->immagine = asset(Storage::url($categoria->immagine));
 			$piatti = collect($categoria->piatti);
 			$piatti->each(function ($piatto) {
-					$piatto->immagine = secure_asset(Storage::url($piatto->immagine));
+					$piatto->immagine = asset(Storage::url($piatto->immagine));
+					if($piatto->aggiunte == 0)
+						$piatto->aggiunte = false;
+					else
+						$piatto->aggiunte = true;
 			});
 		});
 

@@ -58,7 +58,7 @@ class PiattoController extends Controller
 		{
 			$piatto->aggiunte = false;
 		}else {
-			$piatto->aggiunte = $request->aggiunte;
+			$piatto->aggiunte = true;
 		}
         $this->updateMenuVersion();
         $piatto->save();

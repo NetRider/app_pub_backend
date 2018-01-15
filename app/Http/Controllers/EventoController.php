@@ -41,7 +41,7 @@ class EventoController extends Controller
         $evArray = Evento::all();
 
         $evArray->each(function ($ev) {
-            $ev->immagine = secure_asset(Storage::url($ev->immagine));
+            $ev->immagine = asset(Storage::url($ev->immagine));
         });
 
         $returnArray = ["evento" => $evArray];
