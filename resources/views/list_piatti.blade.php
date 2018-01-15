@@ -8,6 +8,16 @@
 		<div class="col-md-12" style="text-align: left;">
 			<button class="btn btn-primary" onclick="location.href='/';"><span class="glyphicon glyphicon-home"></span> Torna alla home</button>
 			<button class="btn btn-success" style="margin-left: 2px;" onclick="location.href='/formPiatto';"><span class="glyphicon glyphicon-plus"></span> Aggiungi Piatto</button>
+			<div class="btn-group">
+	  			<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    		Filtra per Categorie<span class="caret"></span>
+	  			</button>
+				<ul class="dropdown-menu">
+					@foreach ($categorie as $c)
+						<li><a href="/listPiattiByCategoria/{{$c->id}}">{{$c->nome}}</a></li>
+					@endforeach
+				</ul>
+			</div>
 		</div>
 	</div>
 	<hr>

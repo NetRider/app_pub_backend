@@ -42,17 +42,22 @@
 
             @endphp
                 <td class="hidden-sm hidden-xs">{{$desc}}</td>
-                <td class="hidden-sm hidden-xs"><img class="clip" src="{{Storage::url($categoria->immagine)}}"
-                                                     alt="Image not found" height="50" width="auto"></td>
-                <td>
+                <td class="hidden-sm hidden-xs"><img class="clip" src="{{Storage::url($categoria->immagine)}}" alt="Image not found" height="50" width="auto"></td>
+
+			 @if ($categoria->nome) != "Aggiunte")
+				<td>
                     <button class="btn btn-default" onclick="location.href='/editCategoria/{{$categoria->id}}';"><span
                                 class="glyphicon glyphicon-edit"></span> Modifica
                     </button>
                     <button class="btn btn-danger" onclick="location.href='/destroyCategoria/{{$categoria->id}}';"><span
                                 class="glyphicon glyphicon-trash"></span> Elimina
                     </button>
+
                 </td>
+			@endif
             </tr>
+
+
     @endforeach
         <script>
             // Sortable rows

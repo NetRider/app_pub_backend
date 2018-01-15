@@ -19,6 +19,8 @@ Route::post('/insertPiatto', 'PiattoController@insertPiatto');
 
 Route::get('/listPiatti', 'PiattoController@listPiatti');
 
+Route::get('/listPiattiByCategoria/{id}' , 'PiattoController@listPiattiByCategoria');
+
 Route::get('/formPiatto', 'PiattoController@getForm');
 
 Route::post('/updatePiatto', 'PiattoController@updatePiatto');

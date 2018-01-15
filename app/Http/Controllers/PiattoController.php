@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Piatto;
+use App\Categoria;
+
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
@@ -54,12 +56,17 @@ class PiattoController extends Controller
         $piatto->descrizione = $request->descrizione;
         $piatto->prezzo = $request->prezzo;
         $piatto->categoria_id = $request->categoria_id;
+
+
+		$piatto->order = Piatto::all()->count() + 1;
+
 		if($request->aggiunte == null)
 		{
 			$piatto->aggiunte = false;
 		}else {
 			$piatto->aggiunte = true;
 		}
+
         $this->updateMenuVersion();
         $piatto->save();
 
@@ -135,8 +142,15 @@ class PiattoController extends Controller
     //mostra tutti gli elementi
     public function listPiatti()
     {
-        return view('list_piatti', ['piatti' => Piatto::orderBy('order', 'asc')->get()]);
+        return view('list_piatti', ['piatti' => Piatto::orderBy('categoria_id', 'asc')->get(),
+									'categorie' => Categoria::all()]);
     }
+
+	public function listPiattiByCategoria($id)
+	{
+		return view('list_piatti', ['piatti' => Piatto::where('categoria_id', $id)->orderBy('order', 'asc')->get(),
+									'categorie' => Categoria::all()]);
+	}
 
     private function updateMenuVersion()
     {
