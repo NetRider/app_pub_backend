@@ -142,7 +142,7 @@ class PiattoController extends Controller
     //mostra tutti gli elementi
     public function listPiatti()
     {
-        return view('list_piatti', ['piatti' => Piatto::orderBy('categoria_id', 'asc')->get(),
+        return view('list_piatti', ['piatti' => Piatto::orderBy('categoria_id', 'asc')->orderBy('order', 'asc')->get(),
 									'categorie' => Categoria::all()]);
     }
 
