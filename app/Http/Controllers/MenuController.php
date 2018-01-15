@@ -26,7 +26,7 @@ class MenuController extends Controller
 		$menu = Menu::find(1);
 
 		$categorie = collect($menu->categorie);
-
+		$categorie->sortBy('order');
 		$categorie->each(function ($categoria) {
 			$categoria->immagine = asset(Storage::url($categoria->immagine));
 			$piatti = collect($categoria->piatti);
