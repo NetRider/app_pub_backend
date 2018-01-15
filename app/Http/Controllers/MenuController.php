@@ -26,7 +26,6 @@ class MenuController extends Controller
 		$menu = Menu::find(1);
 
 		$categorie = collect($menu->categorie);
-		$categorie->sortBy('order');
 		$categorie->each(function ($categoria) {
 			$categoria->immagine = asset(Storage::url($categoria->immagine));
 			$piatti = collect($categoria->piatti);
@@ -38,8 +37,8 @@ class MenuController extends Controller
 						$piatto->aggiunte = true;
 			});
 		});
-
-		$menuArray = ["menu" => $categorie];
+		$temp = $categorie->sortBy('order');
+		$menuArray = ["menu" => $temp->values()->all()];
 
 		return response()->json($menuArray);
     }
