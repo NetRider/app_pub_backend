@@ -9,10 +9,7 @@ $(document).ready(function () {
             // compound rule
             descrizione: "required",
 
-            prezzo: {
-                required: true,
-                number: true
-            },
+            prezzo: "required",
 
             immagine: "required"
         },
@@ -22,10 +19,7 @@ $(document).ready(function () {
 
             descrizione: "Inserisci una descrizione",
 
-            prezzo: {
-                required: "Inserisci un prezzo",
-                number: "Inserisci un numero"
-            },
+            prezzo: "Inserisci un prezzo",
 
             immagine: "Inserisci una immagine"
         }

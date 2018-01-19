@@ -37,7 +37,7 @@ $(document).ready(function () {
 //sends the new order to the server
     function updateOrder(value) {
         $.ajax({
-            url: "http://104.131.188.84/api/sortCategorie",
+            url: "http://127.0.0.1:8000/api/sortCategorie",
             headers: {
                 "_token": "{{ csrf_token() }}"
             },
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
             success: function (jsonData) {
                 //alert("ok");
-                window.location.href = "http://104.131.188.84/listCategorie";
+                window.location.href = "http://127.0.0.1:8000/listCategorie";
             },
 
             error: function (request, status, error) {

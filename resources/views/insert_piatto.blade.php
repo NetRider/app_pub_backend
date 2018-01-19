@@ -14,18 +14,15 @@
       		<form method="post" action='/insertPiatto' enctype="multipart/form-data" style="background-color: white; padding-top: 10px;" id="piattoform">
 				{{ csrf_field() }}
 				<div class="row">
-				    <div class="form-group col-md-3 col-md-offset-1">
+				    <div class="form-group col-md-5 col-md-offset-1">
 				        <label for="nome">Nome piatto:</label>
 				        <input type="text" class="form-control" name="nome">
 				    </div>
-					<div class="form-group col-md-2">
+				</div>
+				<div class="row">
+					<div class="form-group col-md-5 col-md-offset-1">
 						<label for="prezzo">Prezzo:</label>
-						<div class="input-group">
-							<input type="text" class="form-control" name="prezzo">
-							<div class="input-group-addon">
-								€
-							</div>
-						</div>
+						<textarea class="form-control" rows="5" name="prezzo"></textarea>
 					</div>
 				</div>
 				<div class="row">

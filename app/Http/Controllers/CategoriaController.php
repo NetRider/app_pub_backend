@@ -20,7 +20,7 @@ class CategoriaController extends Controller
     public function editCategoria($id)
     {
         $categoria = Categoria::find($id);
-		
+
         return view('edit_categoria', compact('categoria'));
     }
 
@@ -85,6 +85,9 @@ class CategoriaController extends Controller
 		$categoria->immagine = $path;
 		$categoria->descrizione = $request->descrizione;
 		$categoria->menu_id = $request->menu_id;
+
+		$categoria->order = Categoria::all()->count() + 1;
+
 		$categoria->save();
 
 		$this->updateMenuVersion();

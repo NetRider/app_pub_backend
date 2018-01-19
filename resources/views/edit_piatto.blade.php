@@ -15,30 +15,25 @@
         {{ csrf_field() }}
         <input type="hidden" class="form-control" name="id" value="{{$piatto->id}}">
         <div class="row">
-            <div class="form-group col-md-4 col-md-offset-3">
+            <div class="form-group col-md-5 col-md-offset-1">
                 <label for="nome">Nome piatto:</label>
                 <input type="text" class="form-control" name="nome" value="{{$piatto->nome}}">
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-md-4 col-md-offset-3">
+            <div class="form-group col-md-5 col-md-offset-1">
                 <label for="descrizione">Descrizione:</label>
                 <textarea class="form-control" rows="5" name="descrizione">{{$piatto->descrizione}}</textarea>
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-md-4 col-md-offset-3">
+            <div class="form-group col-md-5 col-md-offset-1">
                 <label for="descrizione">Prezzo:</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" name="prezzo" value="{{$piatto->prezzo}}">
-                    <div class="input-group-addon">
-                        €
-                    </div>
-                </div>
+				<textarea class="form-control" rows="5" name="prezzo">{{$piatto->prezzo}}</textarea>
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-md-4 col-md-offset-3">
+            <div class="form-group col-md-3 col-md-offset-1">
                 <label for="menu_id">Categoria:</label><br>
                 <select name="categoria_id" style="color: black">
                     @foreach ($categorie as $c)
@@ -56,7 +51,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-md-4 col-md-offset-3">
+            <div class="form-group col-md-5 col-md-offset-1">
                 <label for="immagineEdit">Immagine:</label><br>
                 <img class="clip" src="{{Storage::url($piatto->immagine)}}" alt="Image not found" height="50px" width="auto">
                 <input type="file" name="immagineEdit">

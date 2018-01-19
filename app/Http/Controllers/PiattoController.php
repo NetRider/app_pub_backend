@@ -57,7 +57,6 @@ class PiattoController extends Controller
         $piatto->prezzo = $request->prezzo;
         $piatto->categoria_id = $request->categoria_id;
 
-
 		$piatto->order = Piatto::all()->count() + 1;
 
 		if($request->aggiunte == null)
