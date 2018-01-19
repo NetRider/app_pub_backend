@@ -121,7 +121,11 @@ class PiattoController extends Controller
             $piatto->immagine = $path;
         }
         $piatto->prezzo = $request->prezzo;
-        $piatto->categoria_id= $request->categoria_id;
+        $piatto->categoria_id = $request->categoria_id;
+		if($request->aggiunte != null)
+			$piatto->aggiunte = $request->aggiunte;
+		else
+			$piatto->aggiunte = false;
         $this->updateMenuVersion();
         $piatto->save();
         return redirect('/listPiatti');

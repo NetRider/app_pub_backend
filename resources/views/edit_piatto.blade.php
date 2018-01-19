@@ -47,7 +47,11 @@
             </div>
             <div class="form-group col-md-2">
                 <label for="aggiunte">Aggiunte:</label> <br>
-                <input type="checkbox" name="aggiunte" value="{{$piatto->aggiunte}}"> Disponibili
+				@if ($piatto->aggiunte)
+					<input type="checkbox" name="aggiunte" value="true" checked> Disponibili
+				@else
+					<input type="checkbox" name="aggiunte" value="true"> Disponibili
+				@endif
             </div>
         </div>
         <div class="row">
