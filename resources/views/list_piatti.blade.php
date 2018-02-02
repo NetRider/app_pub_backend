@@ -60,8 +60,8 @@
 							<button class="btn btn-danger piattiDelete" id="{{$p->id}}" style="margin-top:15px;"><span class="glyphicon glyphicon-trash"></span> Elimina</button>
 						</td>
 					</tr>
-				</tbody
 				@endforeach
+			</tbody>
 		</div>
 	</div>
 
