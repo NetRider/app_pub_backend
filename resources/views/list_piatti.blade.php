@@ -21,7 +21,7 @@
 		</div>
 	</div>
 	<hr>
-	<table  class="table table-striped sortableP" style="-webkit-overflow-scrolling: touch;">
+	<table  class="table table-striped sortableP" style="--webkit-overflow-scrolling: touch;">
 		<thead>
 		<tr>
 			<th scope="col" >Nome</th>

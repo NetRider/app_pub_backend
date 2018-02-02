@@ -26,7 +26,13 @@ $(document).ready(function () {
     });
 
 	$('.piattiModifier').on('click touchstart', function(button) {
-		var idPiatto = button.toElement.id;
+		var idPiatto;
+
+		if(button.toElement == null) {
+			idPiatto = button.currentTarget.id;
+		}else {
+			idPiatto = button.toElement.id;
+		}
 		location.href='/editPiatto/' + idPiatto;
    });
 });
