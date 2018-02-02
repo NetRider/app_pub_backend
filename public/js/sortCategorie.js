@@ -5,29 +5,6 @@ function Item (id, order) {
 }
 
 $(document).ready(function () {
-
-	$('.categoriaModifier').on('click touchstart', function(button) {
-		var idCategoria;
-
-		if(button.toElement == null) {
-			idCategoria = button.currentTarget.id;
-		}else {
-			idCategoria = button.toElement.id;
-		}
-		location.href='/editCategoria/' + idCategoria;
-   });
-
-   $('.categoriaDelete').on('click touchstart', function(button) {
-	   var idCategoria;
-
-	   if(button.toElement == null) {
-		   idCategoria = button.currentTarget.id;
-	   }else {
-		   idCategoria = button.toElement.id;
-	   }
-	   location.href='/destroyCategoria' + idCategoria;
-	 });
-
 // Sortable rows
     $('.sortableC').sortable({
         containerSelector: 'table',
