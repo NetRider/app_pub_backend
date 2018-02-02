@@ -21,42 +21,46 @@
 		</div>
 	</div>
 	<hr>
-	<table  class="table table-striped sortableP" style="--webkit-overflow-scrolling: touch;">
-		<thead>
-		<tr>
-			<th scope="col" >Nome</th>
-			<th scope="col" class="hidden-sm hidden-xs">Descrizione</th>
-			<th scope="col">Prezzo</th>
-			<th scope="col" class="hidden-sm hidden-xs">Categoria</th>
-			<th scope="col" class="hidden-sm hidden-xs">Immagine</th>
-			<th scope="col"></th>
-		</tr>
-		</thead>
-		<tbody>
-	@foreach ($piatti as $p)
-		<tr id="{{$p->id}}">
-			<td>{{$p->nome}}</td>
-			@php
-				$desc=null;
-                // return with no change if string is shorter than $limit
-                if(strlen($p->descrizione) <= 20)
-                {
-                  $desc = $p->descrizione;
-                }
-                else
-                  {
-                      $desc = substr($p->descrizione, 0, 20) . "...";
-                  }
+	<div class="row">
+		<div class="col-md-12">
+			<table  class="table table-striped sortableP" style="--webkit-overflow-scrolling: touch !important;">
+				<thead>
+				<tr>
+					<th scope="col" >Nome</th>
+					<th scope="col" class="hidden-sm hidden-xs">Descrizione</th>
+					<th scope="col">Prezzo</th>
+					<th scope="col" class="hidden-sm hidden-xs">Categoria</th>
+					<th scope="col" class="hidden-sm hidden-xs">Immagine</th>
+					<th scope="col">Azioni</th>
+				</tr>
+				</thead>
+				<tbody>
+			@foreach ($piatti as $p)
+				<tr id="{{$p->id}}">
+					<td>{{$p->nome}}</td>
+					@php
+						$desc=null;
+						// return with no change if string is shorter than $limit
+						if(strlen($p->descrizione) <= 20)
+						{
+						  $desc = $p->descrizione;
+						}
+						else
+						  {
+							  $desc = substr($p->descrizione, 0, 20) . "...";
+						  }
 
-			@endphp
-			<td class="hidden-sm hidden-xs">{{$desc}}</td>
-			<td>{{$p->prezzo}}</td>
-			<td class="hidden-sm hidden-xs">{{$p->categoria->nome}}</td>
-			<td class="hidden-sm hidden-xs"><img class="clip" src="{{Storage::url($p->immagine)}}" alt="Image not found" height="50px" width="auto"></td>
-			<td><button class="btn btn-default piattiModifier" id="{{$p->id}}"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
-				<button class="btn btn-danger" onclick="location.href='/destroyPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-trash"></span> Elimina</button>
-			</td>
-		</tr>
-	@endforeach
+					@endphp
+					<td class="hidden-sm hidden-xs">{{$desc}}</td>
+					<td>{{$p->prezzo}}</td>
+					<td class="hidden-sm hidden-xs">{{$p->categoria->nome}}</td>
+					<td class="hidden-sm hidden-xs"><img class="clip" src="{{Storage::url($p->immagine)}}" alt="Image not found" height="50px" width="auto"></td>
+					<td><button class="btn btn-default piattiModifier" id="{{$p->id}}"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
+						<button class="btn btn-danger" onclick="location.href='/destroyPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-trash"></span> Elimina</button>
+					</td>
+				</tr>
+			@endforeach
+		</div>
+	</div>
 
 @endsection
