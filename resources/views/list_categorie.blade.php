@@ -46,11 +46,10 @@
 
 
 				<td>
-                    <button class="btn btn-default" onclick="location.href='/editCategoria/{{$categoria->id}}';"><span
-                                class="glyphicon glyphicon-edit"></span> Modifica
+                    <button class="btn btn-default categoriaModifier" id="{{$categoria->id}}"><span class="glyphicon glyphicon-edit"></span> Modifica
                     </button>
 					@if ($categoria->nome != "Aggiunte")
-                    	<button class="btn btn-danger" onclick="location.href='/destroyCategoria/{{$categoria->id}}';"><span
+                    	<button class="btn btn-danger categoriaDelete" style="margin-left:15px;" id="{{$categoria->id}}"><span
                                 class="glyphicon glyphicon-trash"></span> Elimina
                     	</button>
 					@endif
@@ -68,5 +67,7 @@
                 itemSelector: 'tr',
                 placeholder: '<tr class="placeholder"/>'
             });
+
+
         </script>
 @endsection

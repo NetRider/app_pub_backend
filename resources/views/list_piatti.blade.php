@@ -55,8 +55,9 @@
 					<td>{{$p->prezzo}}</td>
 					<td class="hidden-sm hidden-xs">{{$p->categoria->nome}}</td>
 					<td class="hidden-sm hidden-xs"><img class="clip" src="{{Storage::url($p->immagine)}}" alt="Image not found" height="50px" width="auto"></td>
-					<td><button class="btn btn-default piattiModifier" id="{{$p->id}}"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
-						<button class="btn btn-danger" onclick="location.href='/destroyPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-trash"></span> Elimina</button>
+					<td>
+						<button class="btn btn-default piattiModifier" id="{{$p->id}}"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
+						<button class="btn btn-danger piattiDelete" id="{{$p->id}}" style="margin-top:15px;"><span class="glyphicon glyphicon-trash"></span> Elimina</button>
 					</td>
 				</tr>
 			@endforeach
