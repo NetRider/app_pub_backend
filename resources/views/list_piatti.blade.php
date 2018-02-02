@@ -35,32 +35,33 @@
 				</tr>
 				</thead>
 				<tbody>
-			@foreach ($piatti as $p)
-				<tr id="{{$p->id}}">
-					<td>{{$p->nome}}</td>
-					@php
-						$desc=null;
-						// return with no change if string is shorter than $limit
-						if(strlen($p->descrizione) <= 20)
-						{
-						  $desc = $p->descrizione;
-						}
-						else
-						  {
-							  $desc = substr($p->descrizione, 0, 20) . "...";
-						  }
+				@foreach ($piatti as $p)
+					<tr id="{{$p->id}}">
+						<td>{{$p->nome}}</td>
+						@php
+							$desc=null;
+							// return with no change if string is shorter than $limit
+							if(strlen($p->descrizione) <= 20)
+							{
+							  $desc = $p->descrizione;
+							}
+							else
+							  {
+								  $desc = substr($p->descrizione, 0, 20) . "...";
+							  }
 
-					@endphp
-					<td class="hidden-sm hidden-xs">{{$desc}}</td>
-					<td>{{$p->prezzo}}</td>
-					<td class="hidden-sm hidden-xs">{{$p->categoria->nome}}</td>
-					<td class="hidden-sm hidden-xs"><img class="clip" src="{{Storage::url($p->immagine)}}" alt="Image not found" height="50px" width="auto"></td>
-					<td>
-						<button class="btn btn-default piattiModifier" id="{{$p->id}}"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
-						<button class="btn btn-danger piattiDelete" id="{{$p->id}}" style="margin-top:15px;"><span class="glyphicon glyphicon-trash"></span> Elimina</button>
-					</td>
-				</tr>
-			@endforeach
+						@endphp
+						<td class="hidden-sm hidden-xs">{{$desc}}</td>
+						<td>{{$p->prezzo}}</td>
+						<td class="hidden-sm hidden-xs">{{$p->categoria->nome}}</td>
+						<td class="hidden-sm hidden-xs"><img class="clip" src="{{Storage::url($p->immagine)}}" alt="Image not found" height="50px" width="auto"></td>
+						<td>
+							<button class="btn btn-default piattiModifier" id="{{$p->id}}"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
+							<button class="btn btn-danger piattiDelete" id="{{$p->id}}" style="margin-top:15px;"><span class="glyphicon glyphicon-trash"></span> Elimina</button>
+						</td>
+					</tr>
+				</tbody
+				@endforeach
 		</div>
 	</div>
 
