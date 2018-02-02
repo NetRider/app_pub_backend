@@ -21,7 +21,7 @@
 		</div>
 	</div>
 	<hr>
-	<table  class="table table-striped sortableP">
+	<table  class="table table-striped sortableP" style="-webkit-overflow-scrolling: touch;">
 		<thead>
 		<tr>
 			<th scope="col" >Nome</th>
@@ -53,7 +53,7 @@
 			<td>{{$p->prezzo}}</td>
 			<td class="hidden-sm hidden-xs">{{$p->categoria->nome}}</td>
 			<td class="hidden-sm hidden-xs"><img class="clip" src="{{Storage::url($p->immagine)}}" alt="Image not found" height="50px" width="auto"></td>
-			<td><button class="btn btn-default" onclick="location.href='/editPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
+			<td><button class="btn btn-default piattiModifier" id="{{$p->id}}"><span class="glyphicon glyphicon-edit"></span> Modifica</button>
 				<button class="btn btn-danger" onclick="location.href='/destroyPiatto/{{$p->id}}';"><span class="glyphicon glyphicon-trash"></span> Elimina</button>
 			</td>
 		</tr>

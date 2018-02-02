@@ -24,4 +24,9 @@ $(document).ready(function () {
             immagine: "Inserisci una immagine"
         }
     });
+
+	$('.piattiModifier').on('click touchstart', function(button) {
+		var idPiatto = button.toElement.id;
+		location.href='/editPiatto/' + idPiatto;
+   });
 });
