@@ -23,7 +23,7 @@
 	<hr>
 	<div class="row">
 		<div class="col-md-12">
-			<table  class="table table-striped sortableP" style="--webkit-overflow-scrolling: touch !important;">
+			<table  class="table table-striped sortableP">
 				<thead>
 				<tr>
 					<th scope="col" >Nome</th>
