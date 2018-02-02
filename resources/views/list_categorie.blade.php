@@ -44,7 +44,6 @@
                 <td class="hidden-sm hidden-xs">{{$desc}}</td>
                 <td class="hidden-sm hidden-xs"><img class="clip" src="{{Storage::url($categoria->immagine)}}" alt="Image not found" height="50" width="auto"></td>
 
-
 				<td>
                     <button class="btn btn-default categoriaModifier" id="{{$categoria->id}}"><span class="glyphicon glyphicon-edit"></span> Modifica
                     </button>

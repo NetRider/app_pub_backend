@@ -42,7 +42,6 @@
 
         <script type="text/javascript" src="{{ asset('js/sortPiatti.js')}}" charset="UTF-8"></script>
         <script type="text/javascript" src="{{ asset('js/sortCategorie.js')}}" charset="UTF-8"></script>
-		<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
     </head>
     <body class="main">
         <div class="flex-center position-ref full-height">

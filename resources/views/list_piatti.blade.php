@@ -22,7 +22,7 @@
 	</div>
 	<hr>
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-sm-11 col-xs-11 col-md-12">
 			<table  class="table table-striped sortableP">
 				<thead>
 				<tr>
