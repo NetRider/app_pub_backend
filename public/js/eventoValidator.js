@@ -1,4 +1,52 @@
 $(document).ready(function () {
+
+    //controlla dimensioni
+    $.validator.addMethod("dimFile", function (val, element) {
+
+        var size = element.files[0].size;
+        if (size > 3100000)// checks the file more than 3 MB
+        {
+            return false;
+        } else {
+            return true;
+        }
+
+    }, "max 3 MB");
+
+    // metodo per validare immagini
+    $.validator.addMethod("accept", function(value, element, param) {
+        // Split mime on commas in case we have multiple types we can accept
+        var typeParam = typeof param === "string" ? param.replace(/\s/g, "").replace(/,/g, "|") : "image/*",
+            optionalValue = this.optional(element),
+            i, file;
+
+        // Element is optional
+        if (optionalValue) {
+            return optionalValue;
+        }
+
+        if ($(element).attr("type") === "file") {
+            // If we are using a wildcard, make it regex friendly
+            typeParam = typeParam.replace(/\*/g, ".*");
+
+            // Check if the element has a FileList before checking each file
+            if (element.files && element.files.length) {
+                for (i = 0; i < element.files.length; i++) {
+                    file = element.files[i];
+
+                    // Grab the mimetype from the loaded file, verify it matches
+                    if (!file.type.match(new RegExp( "\\.?(" + typeParam + ")$", "i"))) {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        // Either return true because we've validated each file, or because the
+        // browser does not support element.files and the FileList feature
+        return true;
+    }, $.validator.format("Puoi caricare solo immagini"));
+
     var startdate = new Date();//today
     $('#datetimepicker1').datetimepicker({
         format: 'ddd MMM DD YYYY',
@@ -61,7 +109,16 @@ $(document).ready(function () {
 
             fine1: "required",
 
-            immagine: "required"
+            'immagine':{
+                required: true,
+                accept: "image/*",
+                dimFile:true
+            },
+
+            'immagineEdit':{
+                accept: "image/*",
+                dimFile:true
+            }
         },
 
         messages: {
@@ -75,7 +132,9 @@ $(document).ready(function () {
 
             fine1: "Inserisci un'ora di fine",
 
-            immagine: "Inserisci una immagine"
+            'immagine':{
+                required: "Inserisci un immagine",
+            },
         },
         submitHandler: function(form) {
             var data = [$('#dataev').val().slice(0, 10), ' 12:34:56', $('#dataev').val().slice(10)].join('');
